@@ -1,0 +1,22 @@
+[
+  {
+    "key": "topContent",
+    "title": "Top Content",
+    "value": "videotitle"
+  },
+  {
+    "key": "avgStreamingDuration",
+    "title": "Avg Streaming Duration",
+    "value": "totalplayduration"
+  },
+  {
+    "key": "streams",
+    "title": "Streams",
+    "value": "numplays"
+  },
+  {
+    "key": "percentage",
+    "title": "%",
+    "value": "precentageData"
+  }
+]

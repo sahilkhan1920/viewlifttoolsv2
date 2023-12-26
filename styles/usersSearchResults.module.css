@@ -1,0 +1,16 @@
+.searchResultPage * {
+  /* outline: 1px solid #ddd; */
+}
+.searchResultPage {
+  max-width: 1366px;
+  width: 100%;
+  margin: 0 auto;
+  height: unset;
+}
+.pageHeaderContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 6rem;
+  padding: 1rem 1rem 0 1rem;
+}

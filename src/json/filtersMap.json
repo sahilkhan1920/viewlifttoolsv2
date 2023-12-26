@@ -1,0 +1,19 @@
+{
+  "REAL_TIME": {
+    "dimensions": ["videoTitle", "seriesTitle", "genre"],
+    "fields": [
+      {
+        "key": "videoTitle",
+        "title": "Video Title"
+      },
+      {
+        "key": "seriesTitle",
+        "title": "Series Title"
+      },
+      {
+        "key": "genre",
+        "title": "Genre"
+      }
+    ]
+  }
+}

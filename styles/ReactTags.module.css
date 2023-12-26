@@ -1,0 +1,33 @@
+/* Add some margin between tags */
+.tagsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px; /* Adjust the value as per your requirement */
+}
+
+.tagItem {
+  background-color: #e8e8e8;
+  color: #000;
+  border-radius: 4px;
+  padding: 4px 8px;
+}
+
+.tagRemove {
+  cursor: pointer;
+  border: none;
+  background-color: #e8e8e8;
+}
+
+.tagInputField {
+  border: none;
+  outline: none;
+}
+
+.selected {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 5px;
+  width: 100%;
+}
+  

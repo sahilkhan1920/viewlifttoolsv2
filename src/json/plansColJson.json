@@ -1,0 +1,62 @@
+[
+  {
+    "key": "title",
+    "title": "Title",
+    "value": "name"
+  },
+  {
+    "key": "identifier",
+    "title": "Identifier",
+    "value": "description"
+  },
+  {
+    "key": "MonetizationModel",
+    "title": "Monetization Model",
+    "value": "monetizationModel"
+  },
+  {
+    "key": "Status",
+    "title": "Status",
+    "value": "allVisible"
+  },
+  {
+    "key": "country",
+    "title": "Country",
+    "value": "allCountry"
+  },
+  {
+    "key": "availabilty",
+    "title": "Availabilty",
+    "value": "scheduledFromDateFormatted"
+  },
+  {
+    "key": "price",
+    "title": "Price",
+    "value": "recurringPaymentAmountAll"
+  },
+  {
+    "key": "frequency",
+    "title": "Frequency",
+    "value": "renewalCycleType"
+  },
+  {
+    "key": "type",
+    "title": "Type",
+    "value": "renewable"
+  },
+  {
+    "key": "planDisplayOrder",
+    "title": "Display Order",
+    "value": "planDisplayOrder"
+  },
+  {
+    "key": "edit",
+    "title": "Edit",
+    "value": "planEditFunction"
+  },
+  {
+    "key": "versionHistory",
+    "title": "Version History",
+    "value": "versionHistoryFunction"
+  }
+]

@@ -1,0 +1,112 @@
+/*
+* This is use for Devices
+*/
+.ios .appleIcon{
+   color: #c2c2c2;
+   font-size: 2.6rem;
+}
+.buildActions .barIcon{
+    color: #c2c2c2;
+    font-size: 2rem;
+    margin-right: 0.5rem;
+}
+.buildActions .time{
+    color: #c2c2c2;
+    font-size: 2rem;
+}
+.buildActions{
+    opacity:0;
+}
+.buildActions:hover{
+    opacity: 9;
+}
+.buildCta button{
+    background: #e2e3e4;
+    color: #fff;
+    box-shadow: none;
+}
+.acordionBackground{
+    background: #fafcfe;
+}
+.expendedBackground{
+    background: #fff;
+}
+.expendedBackground label{
+    color: #036690;
+    font-size: 0.96rem;
+
+}
+.expendedBackground button{
+    border: 1px solid #e2e3e4;
+    color: #036690;
+    box-shadow: none;
+    background: no-repeat;
+}
+.textArea{
+    width: 100%;
+    height: 79px !important;
+}
+.uploadFile{
+    border: 1px solid #e2e3e4;
+    width: 100%;
+    display: inline-block;
+    border-radius: 2px;
+}
+.uploadFile span{
+    float: right;
+    border-radius: 2px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    color: #fff;
+    box-shadow: none;
+    height: 39px;
+}
+.moreDeviceRow{
+    background: #fafcfe;
+    display: flex;
+    border: 1px solid #e8eaee;
+    border-bottom:none
+}
+.active{
+    background: #036690;
+    color: #fff;
+    border-radius: 4px;
+    margin: 11px 0;
+}
+.active {
+    color: #fff;
+    height: auto;
+    padding: 7px 0px;
+    width: 9rem;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+.deviceLogo{
+    color: #c2c2c2;
+    font-size: 2.5rem;
+    margin-top: 9px;
+    margin-right: 14px;
+}
+.deviceName{
+    margin-top:1.1rem;
+    text-transform: uppercase;
+    font-size: 1rem;
+}
+.inactive{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: none;
+}
+.inactive {
+    padding: 6px 0px;
+    width: 9rem;
+    cursor: pointer;
+    text-transform: uppercase;
+    background: #fff;
+    border: 1px solid #ccc;
+    box-shadow: none;
+    border-radius: 3px;
+}
+.modelBackground{
+    background: #fff;
+}

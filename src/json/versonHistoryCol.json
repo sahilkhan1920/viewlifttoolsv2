@@ -1,0 +1,27 @@
+[
+  {
+    "key": "plan",
+    "title": "Plan",
+    "value": "plan"
+  },
+  {
+    "key": "changesBy",
+    "title": "Changes By",
+    "value": "changesBy"
+  },
+  {
+    "key": "createdAt",
+    "title": "Created At",
+    "value": "createdAt"
+  },
+  {
+    "key": "version",
+    "title": "version",
+    "value": "version"
+  },
+  {
+    "key": "changes",
+    "title": "Changes",
+    "value": "changes"
+  }
+]

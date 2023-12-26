@@ -1,0 +1,17 @@
+{
+  "header": {
+    "title": "Edit Existing Offer",
+    "actions": [
+      {
+        "id": "cancel",
+        "label": "Cancel",
+        "variant": "outlined"
+      },
+      {
+        "id": "save",
+        "label": "Save",
+        "variant": "contained"
+      }
+    ]
+  }
+}

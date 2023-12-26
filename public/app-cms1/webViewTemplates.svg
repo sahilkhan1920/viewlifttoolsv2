@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="771px" height="550px" viewBox="0 0 771 550" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+    <title>Group 5 + Rectangle + Rectangle Copy 12 + Rectangle Copy 13 + Rectangle Copy 11 + Group 4 + Group 3 Mask</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <filter x="-4.2%" y="-5.9%" width="108.4%" height="111.9%" filterUnits="objectBoundingBox" id="filter-1">
+            <feMorphology radius="0.5" operator="dilate" in="SourceAlpha" result="shadowSpreadOuter1"></feMorphology>
+            <feOffset dx="0" dy="6" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.235112544 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+        <rect id="path-2" x="0" y="0" width="751" height="530"></rect>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Fitness" transform="translate(-770.000000, -146.000000)">
+            <g id="Group-Copy">
+                <g id="Group-2" transform="translate(145.000000, 150.000000)">
+                    <g id="Group-5-+-Rectangle-+-Rectangle-Copy-12-+-Rectangle-Copy-13-+-Rectangle-Copy-11-+-Group-4-+-Group-3-Mask" filter="url(#filter-1)" transform="translate(635.000000, 0.000000)">
+                        <mask id="mask-3" fill="white">
+                            <use xlink:href="#path-2"></use>
+                        </mask>
+                        <use id="Mask" fill="#FFFFFF" xlink:href="#path-2"></use>
+                        <g id="Group-5" mask="url(#mask-3)">
+                            <g transform="translate(0.000000, 45.000000)">
+                                <rect id="Rectangle" fill="#D8D8D8" x="0" y="0" width="751" height="211"></rect>
+                                <circle id="Oval" fill="#FFFFFF" cx="353" cy="177" r="6"></circle>
+                                <circle id="Oval-Copy" fill="#FFFFFF" cx="376" cy="177" r="6"></circle>
+                                <circle id="Oval-Copy-2" fill="#FFFFFF" cx="398" cy="177" r="6"></circle>
+                            </g>
+                        </g>
+                        <rect id="Rectangle" fill="#D8D8D8" mask="url(#mask-3)" x="157" y="19" width="91" height="9"></rect>
+                        <rect id="Rectangle-Copy-12" fill="#D8D8D8" mask="url(#mask-3)" x="275" y="19" width="91" height="9"></rect>
+                        <rect id="Rectangle-Copy-13" fill="#D8D8D8" mask="url(#mask-3)" x="393" y="19" width="91" height="9"></rect>
+                        <rect id="Rectangle-Copy-11" fill="#D8D8D8" mask="url(#mask-3)" x="26" y="7" width="104" height="32"></rect>
+                        <g id="Group-4" mask="url(#mask-3)" fill="#D8D8D8">
+                            <g transform="translate(26.000000, 284.000000)">
+                                <rect id="Rectangle-Copy" x="0" y="26" width="160" height="90"></rect>
+                                <rect id="Rectangle" x="0" y="0" width="138" height="9"></rect>
+                                <rect id="Rectangle-Copy-2" x="180" y="26" width="160" height="90"></rect>
+                                <rect id="Rectangle-Copy-4" x="360" y="26" width="160" height="90"></rect>
+                                <rect id="Rectangle-Copy-3" x="540" y="26" width="160" height="90"></rect>
+                            </g>
+                        </g>
+                        <g id="Group-3" mask="url(#mask-3)" fill="#D8D8D8">
+                            <g transform="translate(26.000000, 431.000000)">
+                                <rect id="Rectangle-Copy-10" x="0" y="26" width="160" height="90"></rect>
+                                <rect id="Rectangle-Copy-9" x="0" y="0" width="138" height="9"></rect>
+                                <rect id="Rectangle-Copy-8" x="180" y="26" width="160" height="90"></rect>
+                                <rect id="Rectangle-Copy-6" x="360" y="26" width="160" height="90"></rect>
+                                <rect id="Rectangle-Copy-5" x="540" y="26" width="160" height="90"></rect>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

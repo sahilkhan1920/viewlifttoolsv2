@@ -1,0 +1,576 @@
+{
+  "tableColumns": {
+    "SearchResultTable": [
+      {
+        "key": "name",
+        "title": "Name",
+        "value": "name"
+      },
+      {
+        "key": "email",
+        "title": "Email",
+        "value": "email"
+      },
+      {
+        "key": "account",
+        "title": "Account",
+        "value": "account"
+      },
+      {
+        "key": "country",
+        "title": "Country",
+        "value": "country"
+      },
+      {
+        "key": "subscription",
+        "title": "Subscription",
+        "value": "subscription"
+      },
+      {
+        "key": "phoneNumber",
+        "title": "Phone Number",
+        "value": "phoneNumber"
+      },
+      {
+        "key": "card",
+        "title": "Card",
+        "value": "card"
+      }
+    ],
+    "BillingAndPurchaseTable": [
+      {
+        "key": "date",
+        "title": "Date",
+        "value": "date"
+      },
+      {
+        "key": "title",
+        "title": "Title",
+        "value": "title"
+      },
+      {
+        "key": "transactionType",
+        "title": "Transaction Type",
+        "value": "transactionType"
+      },
+      {
+        "key": "orderNumber",
+        "title": "Order Number",
+        "value": "orderNumber"
+      },
+      {
+        "key": "offer",
+        "title": "Offer",
+        "value": "offer"
+      }
+    ],
+    "OffersTable": [
+      {
+        "key": "name",
+        "title": "Name"
+      },
+      {
+        "key": "offerCode",
+        "title": "Offer Code"
+      },
+      {
+        "key": "applyDate",
+        "title": "Apply Date"
+      },
+      {
+        "key": "expirationDate",
+        "title": "Expiration Date"
+      }
+    ],
+    "AuditLogsTable": [
+      {
+        "key": "date",
+        "title": "Date"
+      },
+      {
+        "key": "property",
+        "title": "Property"
+      },
+      {
+        "key": "change",
+        "title": "Change"
+      },
+      {
+        "key": "comments",
+        "title": "Comments"
+      },
+      {
+        "key": "admin",
+        "title": "Admin"
+      }
+    ],
+    "ActivityAndWatchListTable": [
+      {
+        "key": "date",
+        "title": "Date"
+      },
+      {
+        "key": "change",
+        "title": "Change"
+      },
+      {
+        "key": "ipLogin",
+        "title": "IP Login"
+      },
+      {
+        "key": "email",
+        "title": "Email"
+      },
+      {
+        "key": "phone",
+        "title": "Phone"
+      },
+      {
+        "key": "city",
+        "title": "City"
+      },
+      {
+        "key": "country",
+        "title": "Country"
+      },
+      {
+        "key": "message",
+        "title": "Message"
+      }
+    ],
+    "SessionSummaryTable": [
+      {
+        "key": "occurred",
+        "title": "Occurred"
+      },
+      {
+        "key": "event",
+        "title": "Event"
+      },
+      {
+        "key": "reason",
+        "title": "Reason"
+      }
+    ]
+  },
+  "searchFilterOptionsDropdown": [
+    {
+      "key": "all",
+      "value": "all",
+      "label": "All"
+    },
+    {
+      "key": "email",
+      "value": "email",
+      "label": "Email"
+    },
+    {
+      "key": "name",
+      "value": "name",
+      "label": "Name"
+    },
+    {
+      "key": "last4",
+      "value": "last4",
+      "label": "Last 4 card digits"
+    },
+    {
+      "key": "phoneNumber",
+      "value": "phoneNumber",
+      "label": "Phone Number"
+    },
+    {
+      "key": "receipt",
+      "value": "receipt",
+      "label": "Receipt"
+    },
+    {
+      "key": "paymentUniqueId",
+      "value": "paymentUniqueId",
+      "label": "Payment unique ID"
+    },
+    {
+      "key": "vlTransactionId",
+      "value": "vlTransactionId",
+      "label": "VL Transaction ID"
+    },
+    {
+      "key": "gatewayChargeId",
+      "value": "gatewayChargeId",
+      "label": "Gateway Charge ID"
+    }
+  ],
+  "serviceEndpoint": {
+    "v1": "invokeApi",
+    "sessionSummary": {
+      "base": "https://tools.develop.monumentalsportsnetwork.com",
+      "service": "users/logs"
+    },
+    "changePinModal": {
+      "base": "https://tools.develop.monumentalsportsnetwork.com",
+      "service": "users/logs"
+    }
+  },
+  "segments": [
+    {
+      "key": "account",
+      "label": "Account",
+      "showOnLoad": true,
+      "tabs": [],
+      "config": {
+        "personalInfoSection": {
+          "url": "identity/user",
+          "method": "GET",
+          "role": "Customer Support"
+        }
+      }
+    },
+    {
+      "key": "billingAndPurchase",
+      "label": "Billing & Purchase",
+      "showOnLoad": false,
+      "tabs": [
+        {
+          "key": "oneTimePurchases",
+          "label": "One-Time Purchases",
+          "showOnLoad": true,
+          "headerCtaButton": {
+            "label": "Add Purchase",
+            "onClick": "onAddPurchaseHandler"
+          }
+        },
+        {
+          "key": "subsAndEntitlement",
+          "label": "Subscriptions & Entitlements",
+          "showOnLoad": false,
+          "headerCtaButton": {
+            "label": "Add Plan",
+            "onClick": "onAddPlanHandler"
+          }
+        }
+      ],
+      "config": {
+        "billingHistory": {
+          "url": "payments/billing-history",
+          "method": "GET",
+          "role": "Customer Support"
+        }
+      }
+    },
+    {
+      "key": "offers",
+      "label": "Offers",
+      "showOnLoad": false,
+      "tabs": [],
+      "config": {}
+    },
+    {
+      "key": "activityAndWatchList",
+      "label": "Activity & Watchlist",
+      "showOnLoad": false,
+      "tabs": [],
+      "config": {}
+    },
+    {
+      "key": "devices",
+      "label": "Devices",
+      "showOnLoad": false,
+      "tabs": [],
+      "config": {
+        "getDevices": {
+          "url": "/user/device",
+          "method": "GET",
+          "role": "Customer Support"
+        }
+      }
+    },
+    {
+      "key": "auditLog",
+      "label": "Audit Log",
+      "showOnLoad": false,
+      "tabs": [],
+      "config": {
+        "getLogs": {
+          "url": "https://tools.develop.monumentalsportsnetwork.com/",
+          "method": "GET"
+        }
+      }
+    }
+  ],
+  "searchInfoText": "You can search using Email, Name, Last 4 Card Digits and Phone Number",
+  "searchInputPlaceholderText": "Search...",
+  "endSessionModal": {
+    "title": "End Session",
+    "subtitle": "Selecting OK will immediately end this session",
+    "cta": {
+      "ok": "OK",
+      "cancel": "CANCEL"
+    },
+    "sessionSummary": {
+      "title": "Session Summary",
+      "subtitle": "The following is a summary of actions completed during your session. Please fill in the required information.",
+      "timeLabel": "Total Time on Call",
+      "cta": {
+        "submit": "SUBMIT"
+      },
+      "fields": {
+        "additionalRecipients": {
+          "label": "Add additional recipients:",
+          "placeholderText": "Email addresses..."
+        },
+        "personalMessage": {
+          "label": "Add personal message",
+          "placeholderText": "Personal Message..."
+        }
+      }
+    }
+  },
+  "addUserModal": {
+    "title": "Add New User",
+    "cta": {
+      "add": {
+        "label": "Add"
+      },
+      "cancel": {
+        "label": "Cancel"
+      }
+    },
+    "fields": [
+      {
+        "name": "email",
+        "id": "email",
+        "placeholder": "Enter email",
+        "required": true,
+        "fieldtype": "email",
+        "autoFocus": false,
+        "autoComplete": "false"
+      },
+      {
+        "name": "name",
+        "id": "name",
+        "placeholder": "Enter name (optional)",
+        "required": false,
+        "fieldtype": "text",
+        "autoFocus": false,
+        "autoComplete": "false"
+      },
+      {
+        "name": "country",
+        "id": "country",
+        "placeholder": "Select country",
+        "required": true,
+        "fieldtype": "select",
+        "autoFocus": false,
+        "autoComplete": "false"
+      },
+      {
+        "name": "password",
+        "id": "password",
+        "placeholder": "Enter password",
+        "required": true,
+        "fieldtype": "password",
+        "autoFocus": false,
+        "autoComplete": "false"
+      },
+      {
+        "name": "confirmPassword",
+        "id": "confirmPassword",
+        "placeholder": "Confirm password",
+        "required": true,
+        "fieldtype": "password",
+        "autoFocus": false,
+        "autoComplete": "false"
+      }
+    ],
+    "confirmation": {
+      "title": "User Added Successfully",
+      "text": "User details have been saved successfully. You can close this popup."
+    }
+  },
+  "addNewPlanModal": {
+    "title": "Add New Plan",
+    "cta": {
+      "confirm": {
+        "label": "confirm"
+      },
+      "cancel": {
+        "label": "Cancel"
+      }
+    },
+    "fields": [
+      {
+        "name": "paymentHandler",
+        "id": "paymentHandler",
+        "placeholder": "Payment Handler",
+        "required": true,
+        "fieldtype": "select",
+        "autoFocus": false,
+        "autoComplete": "false",
+        "datasource": [
+          {
+            "label": "Select",
+            "value": "none"
+          },
+          {
+            "label": "Prepaid",
+            "value": "prepaid"
+          },
+          {
+            "label": "iOS",
+            "value": "ios"
+          },
+          {
+            "label": "Android",
+            "value": "android"
+          }
+        ]
+      },
+      {
+        "name": "plan",
+        "id": "plan",
+        "placeholder": "Subscription Plan",
+        "required": true,
+        "fieldtype": "select",
+        "autoFocus": false,
+        "autoComplete": "false",
+        "datasource": "planList"
+      },
+      {
+        "name": "country",
+        "id": "country",
+        "placeholder": "Select a Country",
+        "required": true,
+        "fieldtype": "select",
+        "autoFocus": false,
+        "autoComplete": "false",
+        "datasource": "countryList"
+      },
+      {
+        "name": "receipt",
+        "id": "receipt",
+        "placeholder": "Receipt",
+        "required": true,
+        "fieldtype": "text",
+        "autoFocus": false,
+        "autoComplete": "false",
+        "datasource": null
+      }
+    ],
+    "confirmation": {
+      "title": "Plan Added Successfully",
+      "text": "Plan has been saved successfully. You can close this popup."
+    }
+  },
+  "changePinModal": {
+    "title": "Confirm Action",
+    "subtitle": "Are you sure you want to reset this user's parental control pin?",
+    "fields": [
+      {
+        "id": "newPin",
+        "label": "Enter New Pin"
+      },
+      {
+        "id": "confirmNewPin",
+        "label": "Confirm New Pin"
+      }
+    ],
+    "cta": {
+      "confirm": "Confirm",
+      "cancel": "Cancel"
+    },
+    "payloadText": {
+      "reason": "Reset Parental Control Pin",
+      "comment": "Reset Parental Control Pin"
+    }
+  },
+  "anonymizeUserModal": {
+    "title": "Anonymize User",
+    "subtitle": "Do you want to anonymize this user?",
+    "cta": {
+      "yes": {
+        "label": "Yes"
+      },
+      "cancel": {
+        "label": "Cancel"
+      }
+    },
+    "confirmation": {
+      "title": "User Anonymized",
+      "text": "User has been anonymized. You can close this popup."
+    },
+    "fields": [
+      {
+        "id": "comments",
+        "label": "Add Comments(Mandatory):",
+        "placeholder": "Add your comments"
+      }
+    ]
+  },
+  "deactivateAccountModal": {
+    "title": "De-Activate User?",
+    "subtitle": "Are you sure want to De-Activate account?",
+    "cta": {
+      "confirm": {
+        "label": "Confirm"
+      },
+      "cancel": {
+        "label": "Cancel"
+      }
+    },
+    "fields": [
+      {
+        "id": "reason",
+        "label": "What's the reason?",
+        "type": "text",
+        "placeholder": "Add a reason"
+      },
+      {
+        "id": "comments",
+        "label": "Any comments?",
+        "type": "text",
+        "placeholder": "Additional comments"
+      }
+    ],
+    "confirmation": {
+      "title": "User Anonymized",
+      "text": "User has been anonymized. You can close this popup."
+    }
+  },
+  "sendPasswordResetEmailModal": {
+    "title": "Confirm Action",
+    "subtitle": "Are you sure you want to send an email to reset your password?",
+    "cta": {
+      "confirm": {
+        "label": "Confirm"
+      },
+      "cancel": {
+        "label": "Cancel"
+      }
+    },
+    "confirmation": {
+      "title": "Send Forget Password Email",
+      "text": "Successfully sent the user a link to reset their password."
+    }
+  },
+  "addNoteModal": {
+    "title": "Add Notes",
+    "cta": {
+      "add": {
+        "label": "Add"
+      },
+      "cancel": {
+        "label": "Cancel"
+      }
+    },
+    "confirmation": {
+      "title": "Send Forget Password Email",
+      "text": "Successfully sent the user a link to reset their password."
+    },
+    "fields": [
+      {
+        "id": "notes",
+        "placeholder": "Enter notes..."
+      }
+    ]
+  }
+}

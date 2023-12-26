@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="39px" height="38px" viewBox="0 0 39 38" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
+    <title>Circle / incomplate</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <circle id="path-1" cx="19" cy="19" r="19"></circle>
+        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="38" height="38" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="05-Campaign-Settings" transform="translate(-398.000000, -101.000000)">
+            <g id="Group-5" transform="translate(170.000000, 95.000000)">
+                <g id="status-bar" transform="translate(197.000000, 0.000000)">
+                    <g id="1" transform="translate(0.218712, 0.000000)">
+                        <g id="Circle-/-incomplate" transform="translate(31.113001, 6.000000)">
+                            <g id="X-Circle">
+                                <use id="Oval-41-Copy-3" stroke="#E1E1E1" mask="url(#mask-2)" stroke-width="2" fill="#FFFFFF" transform="translate(19.000000, 19.000000) rotate(-180.000000) translate(-19.000000, -19.000000) " xlink:href="#path-1"></use>
+                                <g id="Group-2" transform="translate(14.000000, 13.000000)" stroke="#94989E" stroke-width="2">
+                                    <path d="M0,11.5990975 L11.5990975,0" id="Path-252"></path>
+                                    <path d="M0,0 L11.5990975,11.5990975" id="Path-252-Copy"></path>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

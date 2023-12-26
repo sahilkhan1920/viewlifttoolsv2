@@ -1,0 +1,44 @@
+{
+  "tableColumns": [
+    {
+      "key": "offerName",
+      "title": "Offer Name"
+    },
+    {
+      "key": "status",
+      "title": "Status"
+    },
+    {
+      "key": "availability",
+      "title": "Availability"
+    },
+    {
+      "key": "campaignType",
+      "title": "Campaign Type"
+    },
+    {
+      "key": "offerType",
+      "title": "Offer Type"
+    },
+    {
+      "key": "offerInfo",
+      "title": "Offer Info"
+    },
+    {
+      "key": "billingPeriod",
+      "title": "Billing Period"
+    },
+    {
+      "key": "offerLimit",
+      "title": "Offer Limit"
+    },
+    {
+      "key": "editOffer",
+      "title": "Edit Offer"
+    },
+    {
+      "key": "versionHistory",
+      "title": "Version History"
+    }
+  ]
+}

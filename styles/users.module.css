@@ -1,0 +1,21 @@
+.usersPage,
+.usersPage * {
+}
+.usersPage,
+.contentWrapper {
+  display: flex;
+  flex-direction: column;
+}
+.usersPage {
+  justify-content: center;
+  background: #fafafa;
+  min-height: calc(100vh - 65px);
+  height: 100%;
+}
+.contentWrapper {
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 6rem;
+  width: 100%;
+}

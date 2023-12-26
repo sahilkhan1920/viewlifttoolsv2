@@ -1,0 +1,20 @@
+[
+  { "value": "", "label": "Select a platform" },
+  { "value": "android", "label": "Android App" },
+  { "value": "lgTv", "label": "LG TV" },
+  { "value": "samsungTv", "label": "Samsung TV" },
+  { "value": "metrological", "label": "Metrological" },
+  { "value": "jiostb", "label": "Jio TV" },
+  { "value": "fireTv", "label": "Fire TV" },
+  { "value": "web", "label": "Website" },
+  { "value": "roku", "label": "Roku" },
+  { "value": "ios", "label": "iOS App" },
+  { "value": "appleTv", "label": "Apple TV" },
+  { "value": "windows10Desktop", "label": "Windows10" },
+  { "value": "xbox", "label": "Xbox One" },
+  { "value": "tivo", "label": "Tivo" },
+  { "value": "androidTv", "label": "Android TV" },
+  { "value": "miTv", "label": "MiTV" },
+  { "value": "corpus", "label": "Corpus" },
+  { "value": "vizioTv", "label": "Vizio TV" }
+]

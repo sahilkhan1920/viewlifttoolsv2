@@ -1,0 +1,112 @@
+[
+  {
+    "name": "Desktop Logo",
+    "key": "desktopLogo",
+    "span": 6
+  },
+  {
+    "name": "Mobile Logo",
+    "key": "mobileLogo",
+    "span": 6
+  },
+  {
+    "name": "PWA Logo",
+    "key": "pwaLogo",
+    "preview": true,
+    "save": true,
+    "backgroundChange": true
+  },
+  {
+    "name": "Placeholder Poster",
+    "key": "placeholderPoster",
+    "preview": true,
+    "save": true,
+    "backgroundChange": true
+  },
+  {
+    "name": "Placeholder Cover",
+    "key": "placeholderCover",
+    "preview": true,
+    "save": true,
+    "backgroundChange": true
+  },
+  {
+    "name": "Placeholder 1x1",
+    "key": "placeholderOneByOne",
+    "preview": true,
+    "save": true,
+    "backgroundChange": true
+  },
+  {
+    "name": "Favicon",
+    "key": "favicon",
+    "preview": true,
+    "save": true
+  },
+  {
+    "name": "Mobile App Icon",
+    "key": "mobileAppIcon",
+    "preview": true,
+    "save": true,
+    "backgroundChange": true
+  },
+  {
+    "name": "OTT App Icon",
+    "key": "ottAppIcon",
+    "preview": true,
+    "save": true,
+    "backgroundChange": true
+  },
+  {
+    "name": "Mobile Splash Screen",
+    "key": "mobileSplash",
+    "preview": true,
+    "save": true,
+    "backgroundChange": true
+  },
+  {
+    "name": "Mobile Splash Screen Video",
+    "key": "mobileSplashVideo",
+    "video": true,
+    "span": 6
+  },
+  {
+    "name": "OTT Splash Screen Video",
+    "key": "ottSplashVideo",
+    "video": true,
+    "span": 6
+  },
+  {
+    "name": "Mobile Create Account Background Video",
+    "key": "mobileCreateAccountBgVideo",
+    "video": true,
+    "span": 6
+  },
+  {
+    "name": "OTT Create Account Background Video",
+    "key": "ottCreateAccountBgVideo",
+    "video": true,
+    "span": 6
+  },
+  {
+    "name": "OTT Splash Screen",
+    "key": "ottSplash",
+    "backgroundChange": true,
+    "preview": true,
+    "save": true
+  },
+  {
+    "name": "AppleTV Top shelf",
+    "key": "appleTvTopShelfBanner",
+    "backgroundChange": true,
+    "preview": true,
+    "save": true
+  },
+  {
+    "name": "AppleTV Top shelf Wide",
+    "key": "appleTvTopShelfBannerWide",
+    "backgroundChange": true,
+    "preview": true,
+    "save": true
+  }
+]

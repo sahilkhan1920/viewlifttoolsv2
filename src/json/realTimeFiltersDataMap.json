@@ -1,0 +1,17 @@
+[
+  {
+    "key": "videoTitle",
+    "title": "Video Title",
+    "dimensions": ["videoTitle"]
+  },
+  {
+    "key": "seriesTitle",
+    "title": "Series Title",
+    "dimensions": ["seriesTitle"]
+  },
+  {
+    "key": "genre",
+    "title": "Genre",
+    "dimensions": ["genre"]
+  }
+]

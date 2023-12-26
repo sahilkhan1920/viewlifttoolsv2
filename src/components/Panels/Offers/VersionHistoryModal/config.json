@@ -1,0 +1,25 @@
+{
+  "title": "Version History",
+  "columns": [
+    {
+      "key": "offer",
+      "title": "Offer"
+    },
+    {
+      "key": "changesBy",
+      "title": "Changes By"
+    },
+    {
+      "key": "createdAt",
+      "title": "Created At"
+    },
+    {
+      "key": "version",
+      "title": "Version"
+    },
+    {
+      "key": "action",
+      "title": "Action"
+    }
+  ]
+}

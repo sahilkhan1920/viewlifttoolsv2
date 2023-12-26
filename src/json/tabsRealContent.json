@@ -1,0 +1,356 @@
+{
+  "STREAMING_USERS": [
+    {
+      "key": "PLATFORM",
+      "title": "PLATFORM",
+      "dimensions": ["platform"]
+    }
+  ],
+  "TOP_CONTENT": [
+    {
+      "key": "VIDEO_TITLE",
+      "title": "VIDEO TITLE",
+      "dimensions": ["platform", "videoTitle"],
+      "metrics": ["numUsersWatching"],
+      "titleKey": "videotitle",
+      "columns": [
+        {
+          "key": "videotitle",
+          "title": "VIDEO TITLE",
+          "value": "videotitle"
+        },
+        {
+          "key": "currentActive",
+          "title": "VIEWS",
+          "value": "currentActive"
+        },
+        {
+          "key": "percentage",
+          "title": "%",
+          "value": "precentageData"
+        }
+      ]
+    },
+    {
+      "key": "SERIES_TITLE",
+      "title": "SERIES TITLE",
+      "dimensions": ["platform", "seriesTitle"],
+      "metrics": ["numUsersWatching"],
+      "titleKey": "seriestitle",
+      "columns": [
+        {
+          "key": "seriestitle",
+          "title": "SERIES/VIDEO",
+          "value": "seriestitle"
+        },
+        {
+          "key": "currentActive",
+          "title": "VIEWS",
+          "value": "currentActive"
+        },
+        {
+          "key": "percentage",
+          "title": "%",
+          "value": "precentageData"
+        }
+      ]
+    },
+    {
+      "key": "GENRE",
+      "title": "GENRE",
+      "dimensions": ["platform", "genre"],
+      "metrics": ["numUsersWatching"],
+      "titleKey": "genre",
+      "columns": [
+        {
+          "key": "genre",
+          "title": "GENRE",
+          "value": "genre"
+        },
+        {
+          "key": "currentActive",
+          "title": "VIEWS",
+          "value": "currentActive"
+        },
+        {
+          "key": "percentage",
+          "title": "%",
+          "value": "precentageData"
+        }
+      ]
+    },
+    {
+      "key": "SERIES_VIDEO",
+      "title": "SERIES/VIDEO",
+      "dimensions": ["platform", "videoTitle", "seriesTitle"],
+      "metrics": ["numUsersWatching"],
+      "titleKey": "seriestitle",
+      "columns": [
+        {
+          "key": "seriesvideotitle",
+          "title": "SERIES/VIDEO",
+          "value": "title"
+        },
+        {
+          "key": "currentActive",
+          "title": "VIEWS",
+          "value": "currentActive"
+        },
+        {
+          "key": "percentage",
+          "title": "%",
+          "value": "precentageData"
+        }
+      ]
+    },
+    {
+      "key": "PLATFORM",
+      "title": "PLATFORM",
+      "dimensions": ["platform"],
+      "metrics": ["numUsersWatching"],
+      "titleKey": "platform",
+      "columns": [
+        {
+          "key": "platform",
+          "title": "PLATFORM",
+          "value": "platform"
+        },
+        {
+          "key": "currentActive",
+          "title": "VIEWS",
+          "value": "currentActive"
+        },
+        {
+          "key": "percentage",
+          "title": "%",
+          "value": "precentageData"
+        }
+      ]
+    }
+  ],
+  "CONTENT_LEVEL_QOS": [
+    {
+      "key": "VIDEO_TITLE",
+      "title": "VIDEO TITLE",
+      "dimensions": ["platform", "videoTitle"],
+      "metrics": ["numUsersWatching"],
+      "titleKey": "videotitle",
+      "columns": [
+        {
+          "key": "videotitle",
+          "title": "VIDEO TITLE",
+          "value": "videotitle"
+        },
+        {
+          "key": "currentActive",
+          "title": "# VIEWS",
+          "value": "currentActive"
+        },
+        {
+          "key": "buffRatio",
+          "title": "BUFFERING RATIO",
+          "value": "buffRatio"
+        },
+        {
+          "key": "ttfb",
+          "title": "Avg. TTFB",
+          "value": "ttfb"
+        },
+        {
+          "key": "avgResolution",
+          "title": "Avg. Resolution",
+          "value": "avgResolution"
+        },
+        {
+          "key": "failedStart",
+          "title": "% of Plays Failed to Start",
+          "value": "failedStart"
+        },
+        {
+          "key": "playsDropped",
+          "title": "% of Plays Dropped",
+          "value": "playsDropped"
+        }
+      ]
+    },
+    {
+      "key": "SERIES_TITLE",
+      "title": "SERIES TITLE",
+      "dimensions": ["platform", "seriesTitle"],
+      "metrics": ["numUsersWatching"],
+      "titleKey": "seriestitle",
+      "columns": [
+        {
+          "key": "seriestitle",
+          "title": "SERIES TITLE",
+          "value": "seriestitle"
+        },
+        {
+          "key": "currentActive",
+          "title": "# VIEWS",
+          "value": "currentActive"
+        },
+        {
+          "key": "buffRatio",
+          "title": "BUFFERING RATIO",
+          "value": "buffRatio"
+        },
+        {
+          "key": "ttfb",
+          "title": "Avg. TTFB",
+          "value": "ttfb"
+        },
+        {
+          "key": "avgResolution",
+          "title": "Avg. Resolution",
+          "value": "avgResolution"
+        },
+        {
+          "key": "failedStart",
+          "title": "% of Plays Failed to Start",
+          "value": "failedStart"
+        },
+        {
+          "key": "playsDropped",
+          "title": "% of Plays Dropped",
+          "value": "playsDropped"
+        }
+      ]
+    },
+    {
+      "key": "GENRE",
+      "title": "GENRE",
+      "dimensions": ["platform", "genre"],
+      "metrics": ["numUsersWatching"],
+      "titleKey": "genre",
+      "columns": [
+        {
+          "key": "genre",
+          "title": "GENRE",
+          "value": "genre"
+        },
+        {
+          "key": "currentActive",
+          "title": "# VIEWS",
+          "value": "currentActive"
+        },
+        {
+          "key": "buffRatio",
+          "title": "BUFFERING RATIO",
+          "value": "buffRatio"
+        },
+        {
+          "key": "ttfb",
+          "title": "Avg. TTFB",
+          "value": "ttfb"
+        },
+        {
+          "key": "avgResolution",
+          "title": "Avg. Resolution",
+          "value": "avgResolution"
+        },
+        {
+          "key": "failedStart",
+          "title": "% of Plays Failed to Start",
+          "value": "failedStart"
+        },
+        {
+          "key": "playsDropped",
+          "title": "% of Plays Dropped",
+          "value": "playsDropped"
+        }
+      ]
+    },
+    {
+      "key": "SERIES_VIDEO",
+      "title": "SERIES/VIDEO",
+      "dimensions": ["platform", "videoTitle", "seriesTitle"],
+      "metrics": ["numUsersWatching"],
+      "titleKey": "seriestitle",
+      "columns": [
+        {
+          "key": "seriesvideotitle",
+          "title": "Series/Video",
+          "value": "seriesvideotitle"
+        },
+        {
+          "key": "currentActive",
+          "title": "# VIEWS",
+          "value": "currentActive"
+        },
+        {
+          "key": "buffRatio",
+          "title": "BUFFERING RATIO",
+          "value": "buffRatio"
+        },
+        {
+          "key": "ttfb",
+          "title": "Avg. TTFB",
+          "value": "ttfb"
+        },
+        {
+          "key": "avgResolution",
+          "title": "Avg. Resolution",
+          "value": "avgResolution"
+        },
+        {
+          "key": "failedStart",
+          "title": "% of Plays Failed to Start",
+          "value": "failedStart"
+        },
+        {
+          "key": "playsDropped",
+          "title": "% of Plays Dropped",
+          "value": "playsDropped"
+        }
+      ]
+    },
+    {
+      "key": "PLATFORM",
+      "title": "PLATFORM",
+      "dimensions": ["platform"],
+      "metrics": ["numUsersWatching"],
+      "titleKey": "platform",
+      "columns": [
+        {
+          "key": "platform",
+          "title": "Platform",
+          "value": "platform"
+        },
+        {
+          "key": "currentActive",
+          "title": "# VIEWS",
+          "value": "currentActive"
+        },
+        {
+          "key": "buffRatio",
+          "title": "BUFFERING RATIO",
+          "value": "buffRatio"
+        },
+        {
+          "key": "ttfb",
+          "title": "Avg. TTFB",
+          "value": "ttfb"
+        },
+        {
+          "key": "avgResolution",
+          "title": "Avg. Resolution",
+          "value": "avgResolution"
+        },
+        {
+          "key": "failedStart",
+          "title": "% of Plays Failed to Start",
+          "value": "failedStart"
+        },
+        {
+          "key": "playsDropped",
+          "title": "% of Plays Dropped",
+          "value": "playsDropped"
+        }
+      ]
+    }
+  ],
+  "FILTERS": {
+    "dimensions": ["videoTitle", "seriesTitle", "genre"]
+  }
+}

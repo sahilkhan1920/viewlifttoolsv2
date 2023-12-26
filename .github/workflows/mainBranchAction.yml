@@ -1,0 +1,27 @@
+# This workflow will do a clean installation of node dependencies, cache/restore them, and run eslint for linting, and tsc for type checking
+
+name: Main Branch Action
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [18.x]
+    steps:
+    - uses: actions/checkout@v3
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+    - name: 📦 Install dependencies
+      run: npm install
+    - name: 🗑️ Lint check
+      run: npm run lint
+    - name: 🛠️ Type check
+      run: npx tsc

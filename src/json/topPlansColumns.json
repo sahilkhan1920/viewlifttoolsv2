@@ -1,0 +1,17 @@
+[
+  {
+    "key": "topPlans",
+    "title": "Top Plans",
+    "value": "subscriptionplan"
+  },
+  {
+    "key": "allSubscribers",
+    "title": "All Subscribers",
+    "value": "numentitled"
+  },
+  {
+    "key": "percentage",
+    "title": "%",
+    "value": "precentageData"
+  }
+]

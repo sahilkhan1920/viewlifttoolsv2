@@ -1,0 +1,586 @@
+{
+  "id": "8",
+  "logoAndIcons": {
+    "desktopLogo": {
+      "imageURI": "https://appcms.develop.monumentalsportsnetwork.com/00000151-11b4-d29b-a17d-55fdb2b80000/images/TestImage.jpeg",
+      "generatedImage": "https://appcms.develop.monumentalsportsnetwork.com/00000151-11b4-d29b-a17d-55fdb2b80000/images/TestImage.jpeg"
+    },
+    "mobileLogo": {
+      "imageURI": "https://appcms.develop.monumentalsportsnetwork.com/00000151-11b4-d29b-a17d-55fdb2b80000/images/PlaceHolder_Cover_2560x1440.png",
+      "generatedImage": "https://appcms.develop.monumentalsportsnetwork.com/00000151-11b4-d29b-a17d-55fdb2b80000/images/PlaceHolder_Cover_2560x1440.png"
+    },
+    "pwaLogo": {
+      "imageURI": "https://appcms.develop.monumentalsportsnetwork.com/00000151-11b4-d29b-a17d-55fdb2b80000/images/2964931.jpg",
+      "generatedImage": {
+        "pwaLogo72x72": "https://appcms-config-msndev.s3.amazonaws.com/00000151-11b4-d29b-a17d-55fdb2b80000/_temp/images/generated/weqw-2-72x72.png",
+        "pwaLogo96x96": "https://appcms-config-msndev.s3.amazonaws.com/00000151-11b4-d29b-a17d-55fdb2b80000/_temp/images/generated/weqw-2-96x96.png",
+        "pwaLogo128x128": "https://appcms-config-msndev.s3.amazonaws.com/00000151-11b4-d29b-a17d-55fdb2b80000/_temp/images/generated/weqw-2-128x128.png",
+        "pwaLogo144x144": "https://appcms-config-msndev.s3.amazonaws.com/00000151-11b4-d29b-a17d-55fdb2b80000/_temp/images/generated/weqw-2-144x144.png",
+        "pwaLogo152x152": "https://appcms-config-msndev.s3.amazonaws.com/00000151-11b4-d29b-a17d-55fdb2b80000/_temp/images/generated/weqw-2-152x152.png",
+        "pwaLogo192x192": "https://appcms-config-msndev.s3.amazonaws.com/00000151-11b4-d29b-a17d-55fdb2b80000/_temp/images/generated/weqw-2-192x192.png",
+        "pwaLogo384x384": "https://appcms-config-msndev.s3.amazonaws.com/00000151-11b4-d29b-a17d-55fdb2b80000/_temp/images/generated/weqw-2-384x384.png",
+        "pwaLogo512x512": "https://appcms-config-msndev.s3.amazonaws.com/00000151-11b4-d29b-a17d-55fdb2b80000/_temp/images/generated/weqw-2-512x512.png"
+      }
+    },
+    "placeholderPoster": {
+      "imageURI": "https://appcms.develop.monumentalsportsnetwork.com/00000151-11b4-d29b-a17d-55fdb2b80000/images/Placeholder_1x1_1024x1024.png",
+      "background": "#e53b3b",
+      "generatedImage": "https://appcms-config-msndev.s3.amazonaws.com/00000151-11b4-d29b-a17d-55fdb2b80000/_temp/images/generated/placeholder-poster.png"
+    },
+    "placeholderPosterSquare": {
+      "imageURI": "https://appcms.develop.monumentalsportsnetwork.com/00000151-11b4-d29b-a17d-55fdb2b80000/images/Placeholder_1x1_1024x1024.png",
+      "background": "#e53b3b",
+      "generatedImage": "https://appcms-config-msndev.s3.amazonaws.com/00000151-11b4-d29b-a17d-55fdb2b80000/_temp/images/generated/placeholder-poster-square.png"
+    },
+    "landscapeImagePlaceholder": {
+      "imageURI": "https://appcms.develop.monumentalsportsnetwork.com/00000151-11b4-d29b-a17d-55fdb2b80000/images/Placeholder_1x1_1024x1024.png",
+      "background": "#e53b3b",
+      "generatedImage": "https://appcms-config-msndev.s3.amazonaws.com/00000151-11b4-d29b-a17d-55fdb2b80000/_temp/images/generated/landscape-placeholder.png"
+    },
+    "placeholderCover": {
+      "imageURI": "https://appcms.develop.monumentalsportsnetwork.com/00000151-11b4-d29b-a17d-55fdb2b80000/images/PlaceHolder_Cover_2560x1440.png",
+      "background": "#ba6363",
+      "generatedImage": "https://appcms.develop.monumentalsportsnetwork.com/00000151-11b4-d29b-a17d-55fdb2b80000/images/PlaceHolder_Cover_2560x1440.png"
+    },
+    "placeholderOneByOne": {
+      "imageURI": "https://appcms.develop.monumentalsportsnetwork.com/00000151-11b4-d29b-a17d-55fdb2b80000/images/PlaceHolder_Cover_2560x1440.png",
+      "background": "",
+      "generatedImage": ""
+    },
+    "favicon": {
+      "imageURI": "https://appcms.develop.monumentalsportsnetwork.com/00000151-11b4-d29b-a17d-55fdb2b80000/images/32_9changeimage_14.jpg",
+      "generatedImage": {
+        "favicon16": "",
+        "favicon32": "",
+        "favicon": ""
+      }
+    },
+    "mobileAppIcon": {
+      "imageURI": "https://appcms.develop.monumentalsportsnetwork.com/00000151-11b4-d29b-a17d-55fdb2b80000/images/PlaceHolder_Cover_2560x1440.png",
+      "background": "",
+      "generatedImage": ""
+    },
+    "iconNotification": {
+      "imageURI": "https://appcms.develop.monumentalsportsnetwork.com/00000151-11b4-d29b-a17d-55fdb2b80000/images/PlaceHolder_Cover_2560x1440.png",
+      "background": "",
+      "generatedImage": ""
+    },
+    "ottAppIcon": {
+      "imageURI": "https://appcms.develop.monumentalsportsnetwork.com/00000151-11b4-d29b-a17d-55fdb2b80000/images/PlaceHolder_Cover_2560x1440.png",
+      "background": "",
+      "generatedImage": ""
+    },
+    "mobileSplash": {
+      "imageURI": "https://appcms.develop.monumentalsportsnetwork.com/00000151-11b4-d29b-a17d-55fdb2b80000/images/PlaceHolder_Cover_2560x1440.png",
+      "background": "",
+      "generatedImage": {
+        "iphone": "",
+        "iphone8Plus": "",
+        "iphonex": "",
+        "ipadProPortrait": "",
+        "ipadProLandscape": ""
+      }
+    },
+    "mobileSplashVideo": {
+      "videoUrl": "https://appcms.develop.monumentalsportsnetwork.com/00000151-11b4-d29b-a17d-55fdb2b80000/images/PlaceHolder_Cover_2560x1440.png",
+      "generatedImage": "https://appcms.develop.monumentalsportsnetwork.com/00000151-11b4-d29b-a17d-55fdb2b80000/images/PlaceHolder_Cover_2560x1440.png"
+    },
+    "ottSplashVideo": {
+      "videoUrl": "https://appcms.develop.monumentalsportsnetwork.com/00000151-11b4-d29b-a17d-55fdb2b80000/images/PlaceHolder_Cover_2560x1440.png",
+      "generatedImage": "https://appcms.develop.monumentalsportsnetwork.com/00000151-11b4-d29b-a17d-55fdb2b80000/images/PlaceHolder_Cover_2560x1440.png"
+    },
+    "mobileCreateAccountBgVideo": {
+      "videoUrl": "https://appcms.develop.monumentalsportsnetwork.com/00000151-11b4-d29b-a17d-55fdb2b80000/images/PlaceHolder_Cover_2560x1440.png",
+      "generatedImage": "https://appcms.develop.monumentalsportsnetwork.com/00000151-11b4-d29b-a17d-55fdb2b80000/images/PlaceHolder_Cover_2560x1440.png"
+    },
+    "ottCreateAccountBgVideo": {
+      "videoUrl": "https://appcms.develop.monumentalsportsnetwork.com/00000151-11b4-d29b-a17d-55fdb2b80000/images/PlaceHolder_Cover_2560x1440.png",
+      "generatedImage": "https://appcms.develop.monumentalsportsnetwork.com/00000151-11b4-d29b-a17d-55fdb2b80000/images/PlaceHolder_Cover_2560x1440.png"
+    },
+    "ottSplash": {
+      "imageURI": "https://appcms.develop.monumentalsportsnetwork.com/00000151-11b4-d29b-a17d-55fdb2b80000/images/PlaceHolder_Cover_2560x1440.png",
+      "background": "",
+      "generatedImage": {
+        "splashBgImage": "",
+        "splashImage": ""
+      }
+    },
+    "appleTvTopShelfBanner": {
+      "imageURI": "https://appcms.develop.monumentalsportsnetwork.com/00000151-11b4-d29b-a17d-55fdb2b80000/images/PlaceHolder_Cover_2560x1440.png",
+      "background": "",
+      "generatedImage": ""
+    },
+    "appleTvTopShelfBannerWide": {
+      "imageURI": "https://appcms.develop.monumentalsportsnetwork.com/00000151-11b4-d29b-a17d-55fdb2b80000/images/PlaceHolder_Cover_2560x1440.png",
+      "background": "",
+      "generatedImage": ""
+    }
+  },
+  "theme": {
+    "themeType": "Custom Theme",
+    "themeId": "07",
+    "metadata": {
+      "displayDuration": true,
+      "displayPublishDate": true,
+      "displayAuthor": true,
+      "displayHoverState": true
+    },
+    "statusBar": {
+      "backgroundColor": "#000000"
+    },
+    "general": {
+      "textColor": "#f1a023",
+      "backgroundColor": "#e90c0c",
+      "pageTitleColor": "#e90c0c",
+      "blockTitleColor": "#e90c0c",
+      "fontFamily": "ABeeZee",
+      "fontUrl": "https://fonts.googleapis.com/css?family=ABeeZee",
+      "boxShadow": "#f1a023",
+      "skeletonColor": "#f1a023"
+    },
+    "link": {
+      "textColor": "#f1a023",
+      "style": []
+    },
+    "link--hover": {
+      "textColor": "#f1a029",
+      "style": []
+    },
+    "player": {
+      "progressBarBackgroundColor": "#f1a023",
+      "progressBarColor": "#e90c0c"
+    },
+    "trayGlow": {
+      "isTrayGlow": false,
+      "trayGlowColor": "#f1a023"
+    },
+    "cta": {
+      "primary": {
+        "backgroundColor": "#f1a023",
+        "textColor": "#f1a023",
+        "style": [],
+        "border": {
+          "color": "#f1a023",
+          "width": "1px"
+        }
+      },
+      "primary--hover": {
+        "backgroundColor": "#f1a023",
+        "textColor": "#f1a023",
+        "style": [],
+        "border": {
+          "color": "#f1a023",
+          "width": "1px"
+        }
+      },
+      "secondary": {
+        "backgroundColor": "#f1a023",
+        "textColor": "#f1a023",
+        "style": [],
+        "border": {
+          "color": "#f1a023",
+          "width": "1px"
+        }
+      },
+      "secondary--hover": {
+        "backgroundColor": "#f1a023",
+        "textColor": "#f1a023",
+        "style": [],
+        "border": {
+          "color": "#f1a023",
+          "width": "1px"
+        }
+      }
+    },
+    "navigation": {
+      "backgroundColor": "#f1a023",
+      "link": {
+        "backgroundColor": "#f1a023",
+        "textColor": "#f1a023",
+        "style": ["bold"]
+      },
+      "link--hover": {
+        "backgroundColor": "#f1a023",
+        "textColor": "#f1a023",
+        "style": ["bold"]
+      },
+      "link--active": {
+        "backgroundColor": "#f1a023",
+        "textColor": "#f1a023",
+        "style": ["bold"]
+      },
+      "dropdown": {
+        "backgroundColor": "#f1a023",
+        "textColor": "#f1a023",
+        "style": []
+      },
+      "dropdown--hover": {
+        "backgroundColor": "#f1a023",
+        "textColor": "#f1a023",
+        "style": []
+      },
+      "dropdown--active": {
+        "backgroundColor": "#f1a023",
+        "textColor": "#f1a023",
+        "style": []
+      }
+    },
+    "footer": {
+      "backgroundColor": "#f1a023",
+      "textColor": "#f1a023",
+      "link": {
+        "textColor": "#f1a023",
+        "style": []
+      },
+      "link--hover": {
+        "textColor": "#f1a023",
+        "style": []
+      },
+      "link--active": {
+        "textColor": "#f1a023",
+        "style": []
+      }
+    },
+    "schedule": {
+      "states": {
+        "pre": "#f1a023",
+        "live": "#f1a023",
+        "default": "#f1a023",
+        "post": "#f1a023",
+        "losingTeam": "#f1a023"
+      }
+    }
+  },
+  "createDate": "2017-11-10T22:38:16.000Z",
+  "updateDate": "2023-07-10T10:16:44.203Z",
+  "activeSection": "Theme",
+  "themeApps": {
+    "themeType": "Custom Theme",
+    "themeId": "07",
+    "metadata": {
+      "displayDuration": true,
+      "displayPublishDate": false,
+      "displayAuthor": true,
+      "displayHoverState": false
+    },
+    "statusBar": {
+      "backgroundColor": "#000923"
+    },
+    "general": {
+      "textColor": "#ffffff",
+      "backgroundColor": "#07132d",
+      "pageTitleColor": "#ffffff",
+      "blockTitleColor": "#ffffff",
+      "fontFamily": "Acumin Pro",
+      "fontUrl": "",
+      "boxShadow": "#071331",
+      "skeletonColor": "#ffffff"
+    },
+    "link": {
+      "textColor": "#868788",
+      "style": []
+    },
+    "link--hover": {
+      "style": []
+    },
+    "player": {
+      "progressBarBackgroundColor": "#404040",
+      "progressBarColor": "#ffffff"
+    },
+    "trayGlow": {
+      "isTrayGlow": false,
+      "trayGlowColor": "#d6202d"
+    },
+    "cta": {
+      "primary": {
+        "backgroundColor": "#cf0a2c",
+        "textColor": "#ffffff",
+        "style": [],
+        "border": {
+          "color": "#cf0a2c",
+          "width": "1px"
+        }
+      },
+      "primary--hover": {
+        "backgroundColor": "#cf0a2c",
+        "textColor": "#ffffff",
+        "style": [],
+        "border": {
+          "color": "#cf0a2c",
+          "width": "1px"
+        }
+      },
+      "secondary": {
+        "backgroundColor": "#2b426e",
+        "textColor": "#ffffff",
+        "style": [],
+        "border": {
+          "color": "#cf0a2c",
+          "width": "1px"
+        }
+      },
+      "secondary--hover": {
+        "textColor": "#ffffff",
+        "style": [],
+        "border": {
+          "color": "#cf0a2c",
+          "width": "1px"
+        }
+      }
+    },
+    "navigation": {
+      "backgroundColor": "#0d1d41",
+      "link": {
+        "backgroundColor": "#071331",
+        "textColor": "#868788",
+        "style": ["bold"]
+      },
+      "link--hover": {
+        "backgroundColor": "#071331",
+        "textColor": "#868788",
+        "style": ["bold"]
+      },
+      "link--active": {
+        "backgroundColor": "#071331",
+        "textColor": "#ffffff",
+        "style": ["bold"]
+      },
+      "dropdown": {
+        "backgroundColor": "#071331",
+        "style": []
+      },
+      "dropdown--hover": {
+        "style": []
+      },
+      "dropdown--active": {
+        "backgroundColor": "#071331",
+        "textColor": "#ffffff",
+        "style": []
+      }
+    },
+    "footer": {
+      "backgroundColor": "#0d1d41",
+      "textColor": "#838996",
+      "link": {
+        "textColor": "#868788",
+        "style": []
+      },
+      "link--hover": {
+        "textColor": "#868788",
+        "style": []
+      },
+      "link--active": {
+        "textColor": "#868788",
+        "style": []
+      }
+    },
+    "schedule": {
+      "states": {
+        "pre": "#000000",
+        "live": "#000000",
+        "default": "#000000",
+        "post": "#000000",
+        "losingTeam": "#000000"
+      }
+    },
+    "useDefault": false
+  },
+  "themeOtt": {
+    "themeType": "Custom Theme",
+    "themeId": "07",
+    "metadata": {
+      "displayDuration": false,
+      "displayPublishDate": false,
+      "displayAuthor": false,
+      "displayHoverState": false
+    },
+    "statusBar": {
+      "backgroundColor": "#000923"
+    },
+    "general": {
+      "textColor": "#ffffff",
+      "backgroundColor": "#07132d",
+      "pageTitleColor": "#ffffff",
+      "blockTitleColor": "#ffffff",
+      "fontFamily": "Acumin Pro",
+      "fontUrl": "",
+      "boxShadow": "#071331",
+      "skeletonColor": "#ffffff"
+    },
+    "link": {
+      "textColor": "#868788",
+      "style": []
+    },
+    "link--hover": {
+      "style": []
+    },
+    "player": {
+      "progressBarBackgroundColor": "#000000",
+      "progressBarColor": "#d6202d"
+    },
+    "trayGlow": {
+      "isTrayGlow": false,
+      "trayGlowColor": "#d6202d"
+    },
+    "cta": {
+      "primary": {
+        "backgroundColor": "#cf0a2c",
+        "textColor": "#ffffff",
+        "style": [],
+        "border": {
+          "color": "#cf0a2c",
+          "width": "1px"
+        }
+      },
+      "primary--hover": {
+        "backgroundColor": "#cf0a2c",
+        "textColor": "#ffffff",
+        "style": [],
+        "border": {
+          "color": "#cf0a2c",
+          "width": "1px"
+        }
+      },
+      "secondary": {
+        "backgroundColor": "#3e4c6d",
+        "textColor": "#ffffff",
+        "style": [],
+        "border": {
+          "color": "#cf0a2c",
+          "width": "1px"
+        }
+      },
+      "secondary--hover": {
+        "textColor": "#ffffff",
+        "style": [],
+        "border": {
+          "color": "#cf0a2c",
+          "width": "1px"
+        }
+      }
+    },
+    "navigation": {
+      "backgroundColor": "#0d1d41",
+      "link": {
+        "backgroundColor": "#0d1d41",
+        "textColor": "#868788",
+        "style": ["bold"]
+      },
+      "link--hover": {
+        "backgroundColor": "#0d1d41",
+        "textColor": "#868788",
+        "style": ["bold"]
+      },
+      "link--active": {
+        "backgroundColor": "#3a4765",
+        "textColor": "#868788",
+        "style": ["bold"]
+      },
+      "dropdown": {
+        "backgroundColor": "#071331",
+        "style": ["bold"]
+      },
+      "dropdown--hover": {
+        "style": ["bold"]
+      },
+      "dropdown--active": {
+        "backgroundColor": "#071331",
+        "textColor": "#ffffff",
+        "style": ["bold"]
+      }
+    },
+    "footer": {
+      "backgroundColor": "#071331",
+      "textColor": "#868788",
+      "link": {
+        "textColor": "#868788",
+        "style": []
+      },
+      "link--hover": {
+        "textColor": "#868788",
+        "style": []
+      },
+      "link--active": {
+        "textColor": "#868788",
+        "style": []
+      }
+    },
+    "schedule": {
+      "states": {
+        "pre": "",
+        "live": "",
+        "default": "",
+        "post": "",
+        "losingTeam": ""
+      }
+    },
+    "useDefault": false
+  },
+  "user": {
+    "id": 8620,
+    "username": "ashishkumar+msndev@viewlift.com",
+    "firstName": "Ashish Kumar",
+    "lastName": "Shrivastav",
+    "isActive": true,
+    "mobileNumber": "+91-9999999999",
+    "accountLocked": {
+      "type": "Buffer",
+      "data": [0]
+    },
+    "lastLogin": "2023-07-10T10:15:27.000Z",
+    "isVerified": false,
+    "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzaXRlIjoibXNuZGV2IiwiaXNzIjoiVG9vbHMiLCJzdWIiOiJBY2Nlc3NUb2tlbiIsImF1ZCI6ImFzaGlzaGt1bWFyK21zbmRldkB2aWV3bGlmdC5jb20iLCJpYXQiOjE2ODg5ODQxMjYsImV4cCI6MTY4OTAyNzMyNn0.CU82w6449hq8yGLEKz0WgFNzYwA_pSdvqnK8r_A6b5U",
+    "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzaXRlIjoibXNuZGV2IiwiaXNzIjoiVG9vbHMiLCJzdWIiOiJSZWZyZXNoVG9rZW4iLCJhdWQiOiJhc2hpc2hrdW1hcittc25kZXZAdmlld2xpZnQuY29tIiwiaWF0IjoxNjg4OTg0MTI2LCJleHAiOjE2ODkwMjczMjZ9.TlcQEoFYsZu5gds7ocj_rdG760L9ZN7VVtKWjgECKzI",
+    "isTwoFactorOnLogin": false,
+    "site": {
+      "id": "8",
+      "version": "522",
+      "uuid": "00000151-11b4-d29b-a17d-55fdb2b80000",
+      "internalName": "msndev",
+      "name": "lweqwmy",
+      "supportEmail": "monumentalnetworksupport@monumentalsports.com",
+      "bucket": "msndev",
+      "serverToken": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzaXRlIjoibXNuZGV2IiwiaWQiOiI3NmJhZjJhZTlkM2ExZjIwNTA4M2RkMzQ0ZmVhNTNiMGU3YWM5NGVkYTkwNDY3OGFiNGIxNzk2ZTk5NjFiNTliIiwiaXBhZGRyZXNzIjoiNTQuMTcyLjc2LjU2IiwiY291bnRyeUNvZGUiOiJXT1JMRFdJREUiLCJwcm92aWRlciI6InZpZXdsaWZ0IiwiaWF0IjoxNjg4OTczMDMyLCJleHAiOjE2ODkwNTk0MzJ9.aev7b3pXgqqfLVQOOPio6SfSBlaYHfKIyRgNFfGLaQs",
+      "v2ManagementApiEnabled": true,
+      "v2VodManagementApiEnabled": false,
+      "isTwoFactorOnLogin": true,
+      "ga_id": "",
+      "googleGAIds": "{\"ga:67805301\":\"Web\"}",
+      "firebasePropertyId": null,
+      "isSocialPublishAutomated": false,
+      "type": "TVE",
+      "types": "[\"SVOD\",\"TVOD\",\"TVE\"]",
+      "isMonetizationModelEnabled": true,
+      "isToolsMonetizationModelEnabled": true,
+      "prefixRenditionUrl": "https://v-msndev.develop.monumentalsportsnetwork.com/",
+      "fastchannelPrefixUrl": "",
+      "desktopLogo": "https://appcms.develop.monumentalsportsnetwork.com/00000151-11b4-d29b-a17d-55fdb2b80000/images/TestImage.jpeg",
+      "emailLogo": null,
+      "faviconLogo": null,
+      "mobileLogo": "https://appcms.develop.monumentalsportsnetwork.com/00000151-11b4-d29b-a17d-55fdb2b80000/images/PlaceHolder_Cover_2560x1440.png",
+      "squareLogo": null,
+      "apiBaseUrl": null,
+      "facebookAppId": "910134432450680",
+      "googleApiKey": "",
+      "googleClientId": "",
+      "language": "",
+      "appId": "ISSRIOCVJSRHJFZDESJM",
+      "appSecretKey": "3sMVsBEmhDOxB3lPzf8Rly9E9KFXU0TN5SmcbfA0",
+      "isLyricalEncoding": false,
+      "awsPipelineId": "1418836039953-00ackz",
+      "awsSnsQueue": "https://sqs.us-east-1.amazonaws.com/053866237477/monumental_transcode_status_queue",
+      "closedCaptionFolder": "ClosedCaptions",
+      "closedCaptionPrefixUrl": "https://v-msndev.develop.monumentalsportsnetwork.com/ClosedCaptions/",
+      "cloudfrontPrivateUrl": null,
+      "articlePrefixUrl": "https://vmsn.viewlift.com/article/",
+      "awsMcQueue": null,
+      "siteDistributionId": "{\"site\":\"E2LIN5FT7ADQ7T\"}",
+      "enableLiveStream": true,
+      "enableSSAISupport": false,
+      "bucketRegion": "us-east-1",
+      "isDRMEncryptionRequired": false,
+      "encodingService": "MEDIA_CONVERT",
+      "encodingProvider": null
+    }
+  }
+}

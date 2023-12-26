@@ -1,0 +1,25 @@
+[
+  { "name": "FREE", "text": "Users can watch, no strings attached." },
+  {
+    "name": "AVOD",
+    "text": "Advertising-supported. Ads play before and/or during the video."
+  },
+  { "name": "SVOD", "text": "Users must subscribe to watch." },
+  {
+    "name": "TVOD",
+    "text": "Users must purchase or rent the content to watch."
+  },
+  { "name": "TVE", "text": "TV Everywhere" },
+  {
+    "name": "PAY-PER-VIEW",
+    "text": "Users must purchase for limited access to watch."
+  },
+  {
+    "name": "SVOD+TVOD",
+    "text": "Users can subscribe to watch content within the service, or purchase/rent inBoxidual content."
+  },
+  {
+    "name": "SVOD+PPV",
+    "text": "Users can subscribe for access to PPV events, or purchase access."
+  }
+]

@@ -1,0 +1,247 @@
+[
+  {
+    "key": "dashboard-360",
+    "title": "Dashboard 360",
+    "route": "/ui-analytics",
+    "items": [
+      {
+        "title": "DASHBOARD",
+        "key": "dashboard",
+        "route": "/ui-analytics"
+      },
+      {
+        "title": "REAL-TIME",
+        "key": "real-time",
+        "items": [
+          {
+            "key": "streaming-users",
+            "title": "STREAMING USERS",
+            "route": "/ui-analytics/real-streaming-users"
+          },
+          {
+            "key": "top-content",
+            "title": "TOP CONTENT",
+            "route": "/ui-analytics/real-top-content"
+          },
+          {
+            "key": "content-level-qos",
+            "title": "CONTENT LEVEL QOS",
+            "route": "/ui-analytics/content-level-qos"
+          }
+        ]
+      },
+      {
+        "title": "AUDIENCE",
+        "key": "audience",
+        "items": [
+          {
+            "key": "overview",
+            "title": "OVERVIEW",
+            "route": "/ui-analytics/audience-overview"
+          },
+          {
+            "key": "acquisition",
+            "title": "ACQUISITION",
+            "route": "/ui-analytics/audience-acquisition"
+          },
+          {
+            "title": "CHURN",
+            "key": "churn",
+            "route": "/ui-analytics/audience-churn"
+          }
+        ]
+      },
+      {
+        "title": "BEHAVIOUR",
+        "key": "behaviour",
+        "items": [
+          {
+            "key": "video-engagement",
+            "title": "VIDEO ENGAGEMENT",
+            "route": "/ui-analytics/behaviour-video-engagement"
+          },
+          {
+            "key": "site-engagement",
+            "title": "SITE ENGAGEMENT",
+            "route": "/ui-analytics/behaviour-site-engagement"
+          },
+          {
+            "key": "cohort-analysis",
+            "title": "COHORT ANALYSIS",
+            "route": "/ui-analytics/behaviour-cohort-analysis"
+          },
+          {
+            "key": "user-lifetime-value",
+            "title": "USER LIFETIME VALUE",
+            "route": "/ui-analytics/behaviour-user-lifetime-value"
+          }
+        ]
+      },
+      {
+        "title": "CONTENT",
+        "key": "content",
+        "items": [
+          {
+            "key": "overview",
+            "title": "OVERVIEW",
+            "route": "/ui-analytics/content-overview"
+          },
+          {
+            "key": "top-content",
+            "title": "TOP CONTENT",
+            "route": "/ui-analytics/top-content"
+          },
+          {
+            "key": "video-watch-through",
+            "title": "VIDEO WATCH-THROUGH",
+            "route": "/ui-analytics/video-watch-through"
+          }
+        ]
+      },
+      {
+        "title": "MONETIZATION",
+        "key": "monetization",
+        "items": [
+          {
+            "key": "subscription-payments",
+            "title": "SUBSCRIPTION PAYMENTS",
+            "route": "/ui-analytics/payments"
+          },
+          {
+            "key": "transactional-content-level",
+            "title": "TRANSACTIONAL CONTENT-LEVEL",
+            "route": "/ui-analytics/transactional-content-level"
+          }
+        ]
+      },
+      {
+        "title": "QUALITY OF SERVICE",
+        "key": "quality-of-service",
+        "items": [
+          {
+            "key": "overall",
+            "title": "OVERALL",
+            "route": "/ui-analytics/qos-overall"
+          },
+          {
+            "key": "device-info",
+            "title": "DEVICE INFO",
+            "route": "/ui-analytics/qos-device-info"
+          },
+          {
+            "key": "geography",
+            "title": "GEOGRAPHY",
+            "route": "/ui-analytics/qos-geography"
+          },
+          {
+            "key": "isp",
+            "title": "ISP",
+            "route": "/ui-analytics/qos-isp"
+          },
+          {
+            "key": "distribution-overview",
+            "title": "DISTRIBUTION OVERVIEW",
+            "route": "/ui-analytics/qos-distribution-overview"
+          },
+          {
+            "key": "distribution-device-info",
+            "title": "DISTRIBUTION - DEVICE INFO",
+            "route": "/ui-analytics/qos-distribution-device"
+          },
+          {
+            "key": "content-level",
+            "title": "CONTENT LEVEL",
+            "route": "/ui-analytics/qos-content"
+          }
+        ]
+      },
+      {
+        "title": "CONVERSIONS",
+        "key": "conversions",
+        "items": [
+          {
+            "key": "google",
+            "title": "GOOGLE",
+            "route": "/ui-analytics/google"
+          },
+          {
+            "key": "firebase",
+            "title": "FIREBASE",
+            "route": "/ui-analytics/firebase"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "key": "monetization",
+    "title": "Monetization",
+    "route": "/contentModels",
+    "items": [],
+    "external": true
+  },
+  {
+    "key": "content",
+    "title": "Content",
+    "route": "/content",
+    "items": [
+      {
+        "title": "LIBRARY",
+        "route": "/"
+      },
+      {
+        "title": "CREATE NEW",
+        "route": "/"
+      },
+      {
+        "title": "VIDEO LICENSE",
+        "route": "/"
+      },
+      {
+        "title": "COUNTRY GROUP",
+        "route": "/"
+      }
+    ],
+    "external": true
+  },
+  {
+    "key": "appcms",
+    "title": "AppCMS",
+    "route": "/ui-appcms",
+    "items": [
+      {
+        "key": "template",
+        "title": "TEMPLATE",
+        "route": "/ui-appcms/template"
+      },
+      {
+        "key": "brand",
+        "title": "BRAND",
+        "route": "/ui-appcms/brand"
+      },
+      {
+        "key": "settings",
+        "title": "SETTINGS",
+        "route": "/ui-appcms/settings"
+      },
+      {
+        "key": "devices",
+        "title": "DEVICES",
+        "route": "/ui-appcms/devices"
+      },
+      {
+        "key": "service",
+        "title": "SERVICE",
+        "route": "/ui-appcms/service"
+      }
+    ],
+    "external": true
+  },
+  {
+    "title": "Users",
+    "route": "/users",
+    "key": "users",
+    "items": [],
+    "external": true
+  }
+]

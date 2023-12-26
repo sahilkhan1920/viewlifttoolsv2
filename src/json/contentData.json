@@ -1,0 +1,308 @@
+{
+  "tabs": [
+    {
+      "key": "video",
+      "title": "Video"
+    },
+    {
+      "key": "live",
+      "title": "Live"
+    },
+    {
+      "key": "videoplaylist",
+      "title": "Playlist"
+    },
+    {
+      "key": "series",
+      "title": "Series"
+    },
+    {
+      "key": "bundle",
+      "title": "Bundle"
+    },
+    {
+      "key": "audio",
+      "title": "Audio"
+    },
+    {
+      "key": "image",
+      "title": "Images"
+    },
+    {
+      "key": "photogallery",
+      "title": "Photo Gallery"
+    },
+    {
+      "key": "article",
+      "title": "Articles"
+    },
+    {
+      "key": "event",
+      "title": "Events"
+    },
+    {
+      "key": "schedules",
+      "title": "Schedule"
+    },
+    {
+      "key": "sport",
+      "title": "Sport",
+      "items": ["sport", "team", "league"]
+    },
+    {
+      "key": "document",
+      "title": "Docs"
+    },
+    {
+      "key": "feed",
+      "title": "Feeds"
+    },
+    {
+      "key": "fastchannel",
+      "title": "Fast Channel"
+    },
+    {
+      "key": "metadata",
+      "title": "Admin"
+    }
+  ],
+  "actions": [
+    {
+      "title": "PUBLISH"
+    },
+    {
+      "title": "UPDATE"
+    },
+    {
+      "title": "UNPUBLISH"
+    },
+    {
+      "title": "ARCHIVE"
+    },
+    {
+      "title": "+/- TAGS"
+    },
+    {
+      "title": "+/- CATEGORY"
+    },
+    {
+      "title": "REVIEW"
+    }
+  ],
+  "contentStatus": [
+    {
+      "key": "none",
+      "value": "none",
+      "title": "None"
+    },
+    {
+      "key": "all",
+      "value": "all",
+      "title": "All"
+    },
+    {
+      "key": "archived",
+      "value": "archived",
+      "title": "Archived"
+    },
+    {
+      "key": "published",
+      "value": "open",
+      "title": "Published"
+    },
+    {
+      "key": "unpublished",
+      "value": "closed",
+      "title": "Un-Published"
+    }
+  ],
+  "filterStatus": [
+    {
+      "key": "lastUpdated",
+      "title": "Most Recent",
+      "orderBy": "lastUpdated",
+      "order": "DESC"
+    },
+    {
+      "key": "addedDateDesc",
+      "title": "Added Date (Newest To Oldest)",
+      "orderBy": "addedDate",
+      "order": "DESC"
+    },
+    {
+      "key": "addedDateAsc",
+      "title": "Added Date (Oldest To Newest)",
+      "orderBy": "addedDate",
+      "order": "ASC"
+    },
+    {
+      "key": "titleDesc",
+      "title": "Title (Newest To Oldest)",
+      "orderBy": "title",
+      "order": "DESC"
+    },
+    {
+      "key": "titleAsc",
+      "title": "Title (Oldest To Newest)",
+      "orderBy": "title",
+      "order": "ASC"
+    },
+    {
+      "key": "updatedDateDesc",
+      "title": "Updated Date (Newest To Oldest)",
+      "orderBy": "updatedDate",
+      "order": "DESC"
+    },
+    {
+      "key": "updatedDateAsc",
+      "title": "Updated Date (Oldest To Newest)",
+      "orderBy": "updatedDate",
+      "order": "ASC"
+    },
+    {
+      "key": "publishDateDesc",
+      "title": "Published Date (Newest To Oldest)",
+      "orderBy": "publishDate",
+      "order": "DESC"
+    },
+    {
+      "key": "publishDateAsc",
+      "title": "Published Date (Oldest To Newest)",
+      "orderBy": "publishDate",
+      "order": "ASC"
+    }
+  ],
+  "awsRegions" : [
+    {
+      "name": "Select one...",
+      "value": ""
+    },
+    {
+      "name": "US East (N. Virginia)",
+      "value": "us-east-1"
+    },
+    {
+      "name": "US West (Oregon)",
+      "value": "us-west-2"
+    },
+    {
+      "name": "Europe (Ireland)",
+      "value": "eu-west-1"
+    },
+    {
+      "name": "Europe (Frankfurt)",
+      "value": "eu-central-1"
+    },
+    {
+      "name": "Europe (London)",
+      "value": "eu-west-2"
+    },
+    {
+      "name": "Europe (Paris)",
+      "value": "eu-west-3"
+    },
+    {
+      "name": "Europe (Stockholm)",
+      "value": "eu-north-1"
+    },
+    {
+      "name": "Asia Pacific (Singapore)",
+      "value": "ap-southeast-1"
+    },
+    {
+      "name": "Asia Pacific (Tokyo)",
+      "value": "ap-northeast-1"
+    },
+    {
+      "name": "Asia Pacific (Sydney)",
+      "value": "ap-southeast-2"
+    },
+    {
+      "name": "Asia Pacific (Seoul)",
+      "value": "ap-northeast-2"
+    },
+    {
+      "name": "South America (São Paulo)",
+      "value": "sa-east-1"
+    },
+    {
+      "name": "Asia Pacific (Mumbai)",
+      "value": "ap-south-1"
+    }
+  ],
+  "lowLatencyAwsRegions" : [
+    {
+      "name": "Select one...",
+      "value": ""
+    },
+    {
+      "name": "US East (N. Virginia)",
+      "value": "us-east-1"
+    },
+    {
+      "name": "US West (Oregon)",
+      "value": "us-west-2"
+    },
+    {
+      "name": "Europe (Ireland)",
+      "value": "eu-west-1"
+    }
+  ],
+  "liveProtocols" : [
+    {
+      "name": "Select one...",
+      "value": ""
+    },
+    {
+      "name": "HLS Pull",
+      "value": "HLS_PULL"
+    },
+    {
+      "name": "RTMP Push",
+      "value": "RTMP_PUSH"
+    },
+    {
+      "name": "RTP Push",
+      "value": "RTP_PUSH"
+    },
+    {
+      "name": "ZIXI Push",
+      "value": "ZIXI_PUSH"
+    },
+    {
+      "name": "RTMP Pull",
+      "value": "RTMP_PULL"
+    },
+    {
+      "name": "MEDIACONNECT Flow",
+      "value": "MEDIACONNECT_FLOW"
+    },
+    {
+      "name": "SRT LISTENER",
+      "value": "SRT_LISTENER"
+    }
+  ],
+  "sourceDecryptionSettings": [
+    {
+      "name": "Select one...",
+      "value": ""
+    },
+    {
+      "name": "aes128",
+      "value": "aes128"
+    },
+    {
+      "name": "aes192",
+      "value": "aes192"
+    },
+    {
+      "name": "aes256",
+      "value": "aes256"
+    }
+  ],
+  "contentTypeMap": {
+    "video": {
+      "title": "VIDEO"
+    }
+  }
+}

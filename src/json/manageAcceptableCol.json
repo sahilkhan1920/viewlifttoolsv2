@@ -1,0 +1,22 @@
+[
+  {
+    "key": "Offer Name",
+    "title": "Offer Name",
+    "value": "name"
+  },
+  {
+    "key": "status",
+    "title": "Status",
+    "value": "status"
+  },
+  {
+    "key": "availabilty",
+    "title": "Availabilty",
+    "value": "addedDate"
+  },
+  {
+    "key": "selected",
+    "title": "selected",
+    "value": "selected"
+  }
+]

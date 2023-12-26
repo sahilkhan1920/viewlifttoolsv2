@@ -1,0 +1,9 @@
+{
+  "subscribedUsers": "numEntitled",
+  "acquisitions": "numEntitled",
+  "churn": "numRegistered",
+  "subscribedUsers": "subscribedMetrics",
+  "streamingDuration": "totalPlayDuration",
+  "topPlans": ["numEntitled", "numSubsWatchedVideo2"],
+  "topContents": "numPlays"
+}

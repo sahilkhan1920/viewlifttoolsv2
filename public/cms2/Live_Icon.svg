@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="80px" height="60px" viewBox="0 0 80 60" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Group</title>
+    <g id="V2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="VL-Automated-Live_Create-New-Popup" transform="translate(-948.000000, -285.000000)">
+            <g id="Group" transform="translate(948.000000, 285.000000)">
+                <rect id="Rectangle" fill="#C8CED5" x="0" y="0" width="80" height="60"></rect>
+                <path d="M30.09,36.852 L30.09,34.476 L23.826,34.476 L23.826,24 L21,24 L21,36.852 L30.09,36.852 Z M34.5,36.852 L34.5,24 L31.674,24 L31.674,36.852 L34.5,36.852 Z M42.96,36.852 L47.226,24 L44.31,24 L41.412,33.036 L41.376,33.036 L38.514,24 L35.616,24 L39.774,36.852 L42.96,36.852 Z M58.08,36.852 L58.08,34.476 L51.15,34.476 L51.15,31.326 L57.378,31.326 L57.378,29.13 L51.15,29.13 L51.15,26.376 L57.936,26.376 L57.936,24 L48.324,24 L48.324,36.852 L58.08,36.852 Z" id="LIVE" fill="#FFFFFF" fill-rule="nonzero"></path>
+            </g>
+        </g>
+    </g>
+</svg>

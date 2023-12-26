@@ -1,0 +1,17 @@
+[
+  {
+    "key": "topPageViews",
+    "title": "Top Page Views",
+    "value": "page"
+  },
+  {
+    "key": "pageViews",
+    "title": "#Pageviews",
+    "value": "views"
+  },
+  {
+    "key": "percentage",
+    "title": "%",
+    "value": "precentageData"
+  }
+]

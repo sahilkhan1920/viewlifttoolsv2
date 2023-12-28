@@ -30,6 +30,7 @@ import GameInfo from '../../../src/components/Content/GameInfo'
 import GameStates from '../../../src/components/Content/GameStates'
 import ScheduleSection from '../../../src/components/Content/ScheduleSection'
 import EventInfo from '../../../src/components/Content/EventInfo'
+import SelectRatingComponent from '../../../src/components/selectRatingOption/selectRating'
 
 const ContentType = () => {
   const {
@@ -113,6 +114,8 @@ const ContentType = () => {
     seasonAirTimezone,
     modelOptions,
     planOptions,
+    personOptions,
+    personInputValue,
     tagInputValue,
     optionalTagInputValue,
     planInputValue,
@@ -171,6 +174,9 @@ const ContentType = () => {
     setShowScheduleButton,
     createScheduleButton,
     setCreateScheduleButton,
+    selectedRating,
+    setSelectedRating,
+
   } = useContentSettings()
 
   return loading ? (
@@ -440,52 +446,99 @@ const ContentType = () => {
                   apiType == 'bundle' ||
                   apiType == 'videoplaylist' ||
                   apiType == 'article') && (
-                  <Box
+                    <Box
+                      sx={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        marginTop: '15px',
+                        gap: '15px',
+                      }}
+                    >
+                      <Box
+                        sx={{
+                          width: '300px',
+                          flex: 1,
+                        }}
+                      >
+                        Monetization Models
+                        <ContentSelect2
+                          value={formik.values.monetizationModels}
+                          handleFocus={handleFocusAutocomplete}
+                          handleChange={handleSelectChange}
+                          options={modelOptions}
+                          id="monetizationModels"
+                          placeholder="Select Models"
+                          name="models"
+                        />
+                      </Box>
+                      <Box
+                        sx={{
+                          width: '300px',
+                          flex: 1,
+                        }}
+                      >
+                        Monetization Plans
+                        <ContentSelect2
+                          value={formik.values.monetizationPlans}
+                          handleInputChange={handleInputChangeAutocomplete}
+                          handleChange={handleSelectChange}
+                          options={planOptions}
+                          id="monetizationPlans"
+                          placeholder="Select Plans"
+                          name="plans"
+                          autocompleteInputValue={planInputValue}
+                          handleAutocompleteClose={handleAutocompleteClose}
+                        />
+                      </Box>
+                    </Box>
+                  )}
+                <Box
+                  sx={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    marginTop: '15px',
+                    gap: '15px',
+                  }}
+                >
+                  {(apiType == 'series') && (<Box
                     sx={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      marginTop: '15px',
-                      gap: '15px',
+                      width: '300px',
+                      flex: 1,
                     }}
                   >
+                    Person
+                    <ContentSelect2
+                      value={formik.values.person}
+                      handleInputChange={handleInputChangeAutocomplete}
+                      handleFocus={handleFocusAutocomplete}
+                      handleChange={handleSelectChange}
+                      options={personOptions}
+                      id="person"
+                      placeholder="Select Person"
+                      name="person"
+                      autocompleteInputValue={personInputValue}
+                      handleAutocompleteClose={handleAutocompleteClose}
+                    />
+                  </Box>)}
+
+                  {(apiType == 'series') && (
                     <Box
                       sx={{
-                        width: '300px',
+                        width: '100%',
                         flex: 1,
                       }}
                     >
-                      Monetization Models
-                      <ContentSelect2
-                        value={formik.values.monetizationModels}
-                        handleFocus={handleFocusAutocomplete}
-                        handleChange={handleSelectChange}
-                        options={modelOptions}
-                        id="monetizationModels"
-                        placeholder="Select Models"
-                        name="models"
-                      />
-                    </Box>
-                    <Box
-                      sx={{
-                        width: '300px',
-                        flex: 1,
-                      }}
-                    >
-                      Monetization Plans
-                      <ContentSelect2
-                        value={formik.values.monetizationPlans}
-                        handleInputChange={handleInputChangeAutocomplete}
-                        handleChange={handleSelectChange}
-                        options={planOptions}
-                        id="monetizationPlans"
-                        placeholder="Select Plans"
-                        name="plans"
-                        autocompleteInputValue={planInputValue}
-                        handleAutocompleteClose={handleAutocompleteClose}
-                      />
-                    </Box>
-                  </Box>
-                )}
+                      <SelectRatingComponent
+                      value={formik.values.parentalRating}
+                      formik={formik}
+                      selectedRating ={selectedRating}
+                      setSelectedRating={setSelectedRating}
+                        name='parentalRating'
+                        id='parentalRating'
+                        handleAutosave={handleAutosave} />
+                    </Box>)}
+                </Box>
+
                 {(apiType == 'game' || apiType == 'event') && (
                   <Box
                     sx={{
@@ -622,16 +675,16 @@ const ContentType = () => {
             apiType == 'article' ||
             apiType == 'sport' ||
             apiType == 'photogallery') && (
-            <ContentAvailableDates
-              startDateTime={startDateTime}
-              setStartDateTime={setStartDateTime}
-              endDateTime={endDateTime}
-              setEndDateTime={setEndDateTime}
-              timeZoneList={timeZoneList}
-              timezone={timezone}
-              handleAsyncDateChange={handleAsyncDateChange}
-            />
-          )}
+              <ContentAvailableDates
+                startDateTime={startDateTime}
+                setStartDateTime={setStartDateTime}
+                endDateTime={endDateTime}
+                setEndDateTime={setEndDateTime}
+                timeZoneList={timeZoneList}
+                timezone={timezone}
+                handleAsyncDateChange={handleAsyncDateChange}
+              />
+            )}
           {(apiType == 'video' || apiType == 'live') && (
             <ContentAirDate
               airDateTime={airDateTime}
@@ -707,13 +760,13 @@ const ContentType = () => {
             apiType == 'game' ||
             apiType == 'video' ||
             apiType == 'live') && (
-            <AdditionalMetadata
-              additionalMetadata={additionalMetadata}
-              setAdditionalMetadata={setAdditionalMetadata}
-              handleAdditionalMetadata={handleAdditionalMetadata}
-              handleAutosave={handleAutosave}
-            />
-          )}
+              <AdditionalMetadata
+                additionalMetadata={additionalMetadata}
+                setAdditionalMetadata={setAdditionalMetadata}
+                handleAdditionalMetadata={handleAdditionalMetadata}
+                handleAutosave={handleAutosave}
+              />
+            )}
           {(apiType == 'video' || apiType == 'live') && <EmbedCode embedCode={embedCode} />}
           <ContentSeo
             formik={formik}

@@ -7,6 +7,7 @@ import moment from 'moment'
 import 'moment-timezone'
 import { useRouter } from 'next/router'
 import dayjs from 'dayjs'
+import { ratingOptions } from '../../constants/ratingOption'
 
 const useContentSettings = () => {
   const [cookies] = useCookies()
@@ -15,6 +16,7 @@ const useContentSettings = () => {
   const [pageData, setPageData] = useState({})
   const [tagOptions, setTagOptions] = useState([])
   const [tagInputValue, setTagInputValue] = useState('')
+  const [personInputValue, setPersonInputValue] = useState('')
   const [livestreamOptions, setLivestreamOptions] = useState([])
   const [livestreamInputValue, setLivestreamInputValue] = useState('')
   const [highlightOptions, setHighlightOptions] = useState([])
@@ -35,7 +37,7 @@ const useContentSettings = () => {
   const [planInputValue, setPlanInputValue] = useState('')
   const [trailerOptions, setTrailerOptions] = useState([])
   const [trailerInputValue, setTrailerInputValue] = useState('')
-  const [relatedVideoOptions, setRelatedVideoOptions] = useState([]) 
+  const [relatedVideoOptions, setRelatedVideoOptions] = useState([])
   const [relatedVideosInputValue, setRelatedVideosInputValue] = useState('')
   const [promoVideoOptions, setPromoVideoOptions] = useState([])
   const [promoVideosInputValue, setPromoVideosInputValue] = useState('')
@@ -57,6 +59,7 @@ const useContentSettings = () => {
   const [director, setDirector] = useState([])
   const [starring, setStarring] = useState([])
   const [videoplaylist, setVideoplaylist] = useState([])
+  const [personOptions, setPersonOptions] = useState([])
   const [additionalMetadata, setAdditionalMetadata] = useState([
     {
       name: null,
@@ -119,6 +122,9 @@ const useContentSettings = () => {
   const [imageListData, setImageListData] = useState([])
   const [imageCount, setImageCount] = useState(0)
   const [showImage, setShowImage] = useState(null)
+
+  const [selectedRating, setSelectedRating] = useState('');
+
 
   const formik = useFormik({
     initialValues: pageData,
@@ -185,35 +191,35 @@ const useContentSettings = () => {
 
   const modelQuery = (selectedModels) => {
     var typesArray = []
-    selectedModels && _.map(selectedModels, function(item){
+    selectedModels && _.map(selectedModels, function (item) {
       typesArray.push(item.type || item.title)
     })
-    var modelQuery=typesArray.join(',')
+    var modelQuery = typesArray.join(',')
     return modelQuery;
   }
 
   const getPlanList = (apiData) => {
-		return fetchHelper({
-			url: 'https://tools.develop.monumentalsportsnetwork.com/v2.0/invoke',
-			method: 'POST',
-			data: apiData,
-			headers: {
+    return fetchHelper({
+      url: 'https://tools.develop.monumentalsportsnetwork.com/v2.0/invoke',
+      method: 'POST',
+      data: apiData,
+      headers: {
         xApiKey: cookies.managementXApiKey,
         Authorization: cookies.accessToken,
       }
-		})
-	}
+    })
+  }
 
   const getModelList = () => {
-		return fetchHelper({
-			url: 'https://api-internal.develop.monumentalsportsnetwork.com/v3/content/models?site=msndev',
-			method: 'GET',
-			headers: {
+    return fetchHelper({
+      url: 'https://api-internal.develop.monumentalsportsnetwork.com/v3/enumodels?site=msndev',
+      method: 'GET',
+      headers: {
         xApiKey: cookies.managementXApiKey,
         Authorization: cookies.accessToken,
       }
-		})
-	}
+    })
+  }
 
   const initializeTemplate = async (result) => {
     getApiType(result)
@@ -235,14 +241,14 @@ const useContentSettings = () => {
       var selectedModelIds = []
       var modelOptions = []
       var modelTypes = []
-      for (var m=0; m < result.monetization.models.length; m++) {
+      for (var m = 0; m < result.monetization.models.length; m++) {
         modelTypes = [...modelTypes, result.monetization.models[m].type]
         selectedModelIds = [...selectedModelIds, result.monetization.models[m].id]
       }
       setSelectedModelTypes(modelTypes)
       var selectedModelDetails = selectedModelIds.length > 0 && await getModelList()
-      if(selectedModelDetails){
-        for(var i = 0; i < selectedModelDetails?.items?.length; i++){
+      if (selectedModelDetails) {
+        for (var i = 0; i < selectedModelDetails?.items?.length; i++) {
           modelOptions.push({
             id: selectedModelDetails.items[i].id,
             name: selectedModelDetails.items[i].name,
@@ -264,7 +270,7 @@ const useContentSettings = () => {
       var initialPlanData = []
       var modelString = modelQuery(result?.monetization?.models)
       var selectedPlanIds = []
-      for (var p=0; p < result.monetization.plans.length; p++) {
+      for (var p = 0; p < result.monetization.plans.length; p++) {
         if (modelString && modelString.includes(result.monetization.plans[p].type)) {
           selectedPlanIds = [...selectedPlanIds, result.monetization.plans[p].planId]
         }
@@ -273,7 +279,7 @@ const useContentSettings = () => {
         initialPlanData.push({
           id: "svodAll",
           title: "All SVOD",
-          type:"SVOD",
+          type: "SVOD",
           isPlanGroup: false
         });
         selectedPlanIds = selectedPlanIds.filter(id => id !== 'svodAll')
@@ -282,36 +288,36 @@ const useContentSettings = () => {
         initialPlanData.push({
           id: "tveAll",
           title: "All TVE",
-          type:"TVE",
+          type: "TVE",
           isPlanGroup: false
         });
         selectedPlanIds = selectedPlanIds.filter(id => id !== 'tveAll')
       }
       var stringPlanIds = selectedPlanIds.toString()
       var apiData = {
-        url:"/subscription/plangroups",
-        method:"GET",
-        role:"Content",
-        auth:{
-          site : cookies.site,
+        url: "/subscription/plangroups",
+        method: "GET",
+        role: "Content",
+        auth: {
+          site: cookies.site,
           isServerToken: true
         },
-        query:{
+        query: {
           ids: stringPlanIds,
           site: cookies.site,
           stringPlanIds,
-          migrationEnabled:true,
-          includePlan:true
+          migrationEnabled: true,
+          includePlan: true
         },
-        body:{}
+        body: {}
       };
       var selectedPlanDetails = selectedPlanIds.length > 0 && await getPlanList(apiData)
-      if(selectedPlanDetails){
-        for(var p = 0; p < selectedPlanDetails.length; p++){
+      if (selectedPlanDetails) {
+        for (var p = 0; p < selectedPlanDetails.length; p++) {
           initialPlanData.push({
             id: selectedPlanDetails[p].id,
             title: selectedPlanDetails[p].name,
-            type: selectedPlanDetails[p].monetizationModel+(selectedPlanDetails[p].objectKey && selectedPlanDetails[p].objectKey == "plangroup" ? '-group' : ''),
+            type: selectedPlanDetails[p].monetizationModel + (selectedPlanDetails[p].objectKey && selectedPlanDetails[p].objectKey == "plangroup" ? '-group' : ''),
             isPlanGroup: selectedPlanDetails[p].objectKey && selectedPlanDetails[p].objectKey == "plangroup",
           });
         }
@@ -413,7 +419,7 @@ const useContentSettings = () => {
 
     // for air date
     var airDateTime = (result.geoRestriction && result.geoRestriction.airDateTime) || null;
-    if(moment(airDateTime).isValid()){
+    if (moment(airDateTime).isValid()) {
       var airDateTimeUpdated = moment.utc(airDateTime).format('MM/DD/YYYY hh:mm a');
       setAirDateTime(airDateTimeUpdated)
     }
@@ -421,7 +427,7 @@ const useContentSettings = () => {
 
     // for season air date
     var seasonAirDateTime = (result.geoRestriction && result.geoRestriction.seasonAirDateTime) || null;
-    if(moment(seasonAirDateTime).isValid()){
+    if (moment(seasonAirDateTime).isValid()) {
       var seasonAirDateTimeUpdated = moment.utc(seasonAirDateTime).format('MM/DD/YYYY hh:mm a');
       setSeasonAirDateTime(seasonAirDateTimeUpdated)
     }
@@ -501,8 +507,11 @@ const useContentSettings = () => {
     let domainName = null
     if (cookies.DomainName) {
       domainName = cookies.DomainName[0]
-      setEmbedCode('<iframe allowfullscreen width="560" height="315" src="https://'+domainName+'/embed/player?filmId='+result.guid+'" frameborder="0"></iframe>')
+      setEmbedCode('<iframe allowfullscreen width="560" height="315" src="https://' + domainName + '/embed/player?filmId=' + result.guid + '" frameborder="0"></iframe>')
     }
+
+    // for parental rating
+    setSelectedRating(result.parentalRating)
 
     // for live streaming
     if (result.isLiveStream) {
@@ -598,7 +607,7 @@ const useContentSettings = () => {
       } else {
         setCreateScheduleButton(true)
       }
-    } 
+    }
 
     // for game states date time
     setDefaultGameState(result.states?.default?.startDateTime ? dayjs.unix(result.states.default.startDateTime).format('MM/DD/YYYY hh:mm a') : '')
@@ -643,7 +652,7 @@ const useContentSettings = () => {
 
   const startLiveProcessingCheck = (id) => {
     if (!liveProcessingCheck) {
-      const liveProcessingInterval = setInterval(function() {
+      const liveProcessingInterval = setInterval(function () {
         fetchHelper({
           url: CONTENT_LIVE_URL + '/' + id,
           method: 'GET',
@@ -651,10 +660,10 @@ const useContentSettings = () => {
             xApiKey: cookies.managementXApiKey,
             Authorization: cookies.accessToken,
           },
-        }).then(function(response) {
+        }).then(function (response) {
           if (response && response.status == 200) {
             if (response.workflowStatus != "processing") {
-              if(response.workflowStatus == "error"){
+              if (response.workflowStatus == "error") {
                 setLiveWorkflowMessage(`Live ${response.workflowStatus}`)
               } else {
                 setLiveWorkflowMessage('')
@@ -668,17 +677,17 @@ const useContentSettings = () => {
           } else {
             clearInterval(liveProcessingInterval)
           }
-        }).catch(function() {
+        }).catch(function () {
           clearInterval(liveProcessingInterval)
         })
       }, 4000);
       setLiveProcessingCheck(liveProcessingInterval)
     }
-	}
+  }
 
   const startLiveCheck = (id, action = false) => {
     if (!liveStatusCheck || action) {
-      const liveCheckInterval = setInterval(function() {
+      const liveCheckInterval = setInterval(function () {
         fetchHelper({
           url: CONTENT_LIVE_URL + '/' + id,
           method: 'GET',
@@ -686,7 +695,7 @@ const useContentSettings = () => {
             xApiKey: cookies.managementXApiKey,
             Authorization: cookies.accessToken,
           },
-        }).then(function(response) {
+        }).then(function (response) {
           if (response?.status == 200) {
             var protocolType = response?.liveInfo?.mediaLive?.InputDetails?.Type
             var inputDetails = response?.liveInfo?.mediaLive?.InputDetails || null
@@ -698,7 +707,7 @@ const useContentSettings = () => {
               } else if (protocolType == "RTMP_PUSH" || protocolType == "RTP_PUSH") {
                 inputUrl = (inputDetails?.InputsDestinations?.length > 0 && inputDetails?.InputsDestinations[0]) || ''
                 setPrimaryLiveInput(inputUrl)
-                if(inputDetails?.InputsDestinations?.length < 2) {
+                if (inputDetails?.InputsDestinations?.length < 2) {
                   setShowSecondaryInput(false)
                 } else {
                   secondaryUrl = inputDetails?.InputsDestinations[1]
@@ -709,13 +718,13 @@ const useContentSettings = () => {
                 inputUrl = (inputDetails?.InputsDestinations?.length > 0 && inputDetails?.InputsDestinations[0]?.ipEndpoint) || ''
                 setPrimaryLiveInput(inputUrl)
                 if (inputDetails?.InputsDestinations?.length < 2) {
-                  if(inputDetails?.InputsDestinations?.length > 0 && inputDetails?.InputsDestinations[0]?.streamId) {
+                  if (inputDetails?.InputsDestinations?.length > 0 && inputDetails?.InputsDestinations[0]?.streamId) {
                     secondaryUrl = inputDetails?.InputsDestinations[0]?.streamId
                     setSecondaryLiveInput(secondaryUrl)
                     setShowSecondaryInput(true)
                   } else {
                     setShowSecondaryInput(false)
-                  }	
+                  }
                 } else {
                   secondaryUrl = inputDetails?.InputsDestinations[1]?.ipEndpoint
                   setSecondaryLiveInput(secondaryUrl)
@@ -784,7 +793,7 @@ const useContentSettings = () => {
           } else {
             clearInterval(liveCheckInterval)
           }
-        }).catch(function() {
+        }).catch(function () {
           clearInterval(liveCheckInterval)
         })
       }, 4000);
@@ -825,7 +834,7 @@ const useContentSettings = () => {
         xApiKey: cookies.managementXApiKey,
         Authorization: cookies.accessToken,
       },
-    }).then(function(response) {
+    }).then(function (response) {
       if (response?.status == 200) {
         startLiveCheck(response.guid, true)
       }
@@ -841,7 +850,7 @@ const useContentSettings = () => {
       action: {
         type: "StopAction",
         stop: {
-          autoUnpublish: false, 
+          autoUnpublish: false,
           autoArchive: false,
           isPublish: false
         },
@@ -855,7 +864,7 @@ const useContentSettings = () => {
         xApiKey: cookies.managementXApiKey,
         Authorization: cookies.accessToken,
       },
-    }).then(function(response) {
+    }).then(function (response) {
       if (response?.status == 200) {
         startLiveCheck(response.guid, true)
       }
@@ -864,7 +873,7 @@ const useContentSettings = () => {
 
   const startMediaLiveAlerts = (id) => {
     if (!mediaLiveAlertsCheck) {
-      const mediaLiveAlertsInterval = setInterval(function() {
+      const mediaLiveAlertsInterval = setInterval(function () {
         fetchHelper({
           url: CONTENT_LIVE_URL + '/' + id,
           method: 'GET',
@@ -872,11 +881,11 @@ const useContentSettings = () => {
             xApiKey: cookies.managementXApiKey,
             Authorization: cookies.accessToken,
           },
-        }).then(function(response) {
+        }).then(function (response) {
           if (response?.status == 200) {
             if (response?.liveInfo?.mediaLive?.MediaLiveAlerts?.length > 0) {
               let arr = []
-              for(let i=0; i<response.liveInfo.mediaLive.MediaLiveAlerts.length; i++){
+              for (let i = 0; i < response.liveInfo.mediaLive.MediaLiveAlerts.length; i++) {
                 let itemData = response.liveInfo.mediaLive.MediaLiveAlerts[i];
                 arr.push(createMediaLiveData(
                   itemData.timeUtc, itemData.state, itemData.pipeline, itemData.type, itemData.message
@@ -887,7 +896,7 @@ const useContentSettings = () => {
           } else {
             clearInterval(mediaLiveAlertsInterval)
           }
-        }).catch(function() {
+        }).catch(function () {
           clearInterval(mediaLiveAlertsInterval)
         })
       }, 4000)
@@ -900,7 +909,7 @@ const useContentSettings = () => {
   }
 
   const handleFocusAutocomplete = async (e, name) => {
-    if (name == 'tag' || name == 'category') {
+    if (name == 'tag' || name == 'category' ) {
       var url = CONTENT_BASE_URL + 'metadata' + '?type=' + name + '&start=0&limit=20'
     } else if (name == 'optionalTags') {
       url = CONTENT_BASE_URL + 'metadata' + '?type=tag&start=0&limit=20'
@@ -912,7 +921,9 @@ const useContentSettings = () => {
       url = CONTENT_BASE_URL + 'team' + '?offset=0&max=20'
     } else if (name == 'league') {
       url = CONTENT_BASE_URL + 'league' + '?offset=0&max=20'
-    } else if (name == 'licenses') {
+    }  else if (name == 'person') {
+      url = CONTENT_BASE_URL + 'person' + '?offset=0&max=20'
+    }else if (name == 'licenses') {
       url = "https://api-internal.develop.monumentalsportsnetwork.com/v3/content/licenses?site=msndev"
     } else if (name == 'models') {
       if (modelOptions.length > 0) {
@@ -920,7 +931,7 @@ const useContentSettings = () => {
       } else {
         var modelDetails = await getModelList()
         let modelOptions = []
-        for(var i = 0; i < modelDetails?.items?.length; i++){
+        for (var i = 0; i < modelDetails?.items?.length; i++) {
           modelOptions.push({
             id: modelDetails.items[i].id,
             name: modelDetails.items[i].name,
@@ -995,6 +1006,8 @@ const useContentSettings = () => {
             setHomeTeamOptions(data)
           } else if (name == 'awayTeam') {
             setAwayTeamOptions(data)
+          } else if (name == 'person') {
+            setPersonOptions(data)
           }
         }
       }
@@ -1027,12 +1040,14 @@ const useContentSettings = () => {
       setHomeTeamInputValue(e?.target?.value)
     } else if (name == 'awayTeam') {
       setAwayTeamInputValue(e?.target?.value)
+    } else if (name == 'person') {
+      setPersonInputValue(e?.target?.value)
     } else {
       setPlanInputValue(e?.target?.value)
     }
     if (name !== 'plans') {
       if (e?.target?.value) {
-        if (name == 'tag' || name == 'category') {
+        if (name == 'tag' || name == 'category' ) {
           url = CONTENT_BASE_URL + 'metadata' + '?type=' + name + '&start=0&limit=20' + '&keywordValue=' + e.target.value
         } else if (name == 'optionalTags') {
           url = CONTENT_BASE_URL + 'metadata' + '?type=tag&start=0&limit=20' + '&keywordValue=' + e.target.value
@@ -1045,6 +1060,9 @@ const useContentSettings = () => {
         } else if (name == 'league') {
           url = CONTENT_BASE_URL + 'league' + '?offset=0&max=20&keywordValue=' + e.target.value
         }
+        else if (name == 'person') {
+          url = CONTENT_BASE_URL + 'person' + '?offset=0&max=20&keywordValue=' + e.target.value
+        }
         const result = await fetchHelper({
           url: url,
           method: 'GET',
@@ -1053,7 +1071,7 @@ const useContentSettings = () => {
             Authorization: cookies.accessToken,
           },
         })
-    
+
         if (result && result.status == 200) {
           if (result.content && result.content.length > 0) {
             var options = {
@@ -1092,6 +1110,8 @@ const useContentSettings = () => {
               setHomeTeamOptions(data)
             } else if (name == 'awayTeam') {
               setAwayTeamOptions(data)
+            } else if (name == 'person') {
+              setPersonOptions(data)
             }
           }
         }
@@ -1107,45 +1127,45 @@ const useContentSettings = () => {
             site: cookies.site,
             isServerToken: true
           },
-          query:{
+          query: {
             site: cookies.site,
             migrationEnabled: true,
             monetizationModel: monetizationModels,
             offset: 0,
             limit: 10,
             searchTerm: e.target.value.split(' ').join('+'),
-            includePlan : true
+            includePlan: true
           },
-          body:{}
+          body: {}
         }
         let data = []
         var planList = await getPlanList(apiData)
-        if(selectedModelTypes.includes('SVOD')){
+        if (selectedModelTypes.includes('SVOD')) {
           let svodAll = {
             id: "svodAll",
             title: "All SVOD",
-            type:"SVOD",
+            type: "SVOD",
             "isPlanGroup": false
           };
           data.push(svodAll)
           setPlanOptions(data)
         }
-        if(selectedModelTypes.includes('TVE')){
+        if (selectedModelTypes.includes('TVE')) {
           let tveAll = {
             id: "tveAll",
             title: "All TVE",
-            type:"TVE",
+            type: "TVE",
             "isPlanGroup": false
           };
           data.push(tveAll)
           setPlanOptions(data)
         }
-        if(planList && planList.length > 0) {
-          for(var i=0;i< planList.length; i++) {
+        if (planList && planList.length > 0) {
+          for (var i = 0; i < planList.length; i++) {
             data.push({
               id: planList[i].id,
               title: planList[i].name,
-              type:planList[i].monetizationModel+(planList[i].objectKey && planList[i].objectKey == "plangroup" ? '-group' : ''),
+              type: planList[i].monetizationModel + (planList[i].objectKey && planList[i].objectKey == "plangroup" ? '-group' : ''),
               "isPlanGroup": planList[i].objectKey && planList[i].objectKey == "plangroup",
             });
           }
@@ -1169,6 +1189,7 @@ const useContentSettings = () => {
     setLeagueInputValue('')
     setHomeTeamInputValue('')
     setAwayTeamInputValue('')
+    setPersonInputValue('')
   }
 
   const handleSelectChange = (key, val) => {
@@ -1406,13 +1427,13 @@ const useContentSettings = () => {
     } else if (fieldBox == 'airTimezone') {
       setAirTimezone(val)
       if (apiType == 'video') {
-        saveData(contentId, apiType, 'geoRestriction', {airTimezone : val})
+        saveData(contentId, apiType, 'geoRestriction', { airTimezone: val })
       } else {
         saveData(contentId, apiType, fieldBox, val)
       }
     } else if (fieldBox == 'seasonAirTimezone') {
       setSeasonAirTimezone(val)
-      saveData(contentId, apiType, 'geoRestriction', {seasonAirTimezone: val})
+      saveData(contentId, apiType, 'geoRestriction', { seasonAirTimezone: val })
     } else if (
       fieldBox == 'defaultStartDateTimeBox' ||
       fieldBox == 'preStartDateTimeBox' ||
@@ -1676,8 +1697,8 @@ const useContentSettings = () => {
   }
 
   const handleAdditionalMetadata = () => {
-    const updatedAdditionalMetadata = [...additionalMetadata, {name: null, value: null}]
-    setAdditionalMetadata(prev => [...prev, {name: null, value: null}])
+    const updatedAdditionalMetadata = [...additionalMetadata, { name: null, value: null }]
+    setAdditionalMetadata(prev => [...prev, { name: null, value: null }])
     handleAutosave(null, 'additionalMetadata', updatedAdditionalMetadata)
   }
 
@@ -1962,7 +1983,7 @@ const useContentSettings = () => {
   }
 
   const saveData = (id, apiType, fieldName, fieldValue) => {
-    if (fieldName == 'categories' || fieldName == 'startDateTime' || fieldName == 'endDateTime' ||  fieldName == 'airDateTime' || fieldName == 'articleBody') {
+    if (fieldName == 'categories' || fieldName == 'startDateTime' || fieldName == 'endDateTime' || fieldName == 'airDateTime' || fieldName == 'articleBody') {
       var putData = {
         action: {
           type: 'UpdateMetadataAction',
@@ -2003,7 +2024,7 @@ const useContentSettings = () => {
           formik.setFieldValue('categories', result.categories)
           formik.setFieldValue('primaryCategory', result.primaryCategory)
         } else if (fieldName == 'startDateTime') {
-          if(apiType == 'live'){
+          if (apiType == 'live') {
             formik.setFieldValue('schedule', result.schedule)
           } else {
             formik.setFieldValue('scheduleStartDate', result.scheduleStartDate)
@@ -2011,7 +2032,7 @@ const useContentSettings = () => {
             formik.setFieldValue('timezone', result.timezone)
           }
         } else if (fieldName == 'endDateTime') {
-          if(apiType == 'live'){
+          if (apiType == 'live') {
             formik.setFieldValue('schedule', result.schedule)
           } else {
             formik.setFieldValue('scheduleEndDate', result.scheduleEndDate)
@@ -2019,7 +2040,7 @@ const useContentSettings = () => {
             formik.setFieldValue('timezone', result.timezone)
           }
         } else if (fieldName == 'timezone') {
-          if(apiType == 'live'){
+          if (apiType == 'live') {
             formik.setFieldValue('schedule', result.schedule)
           } else {
             formik.setFieldValue('timezone', result.timezone)
@@ -2075,6 +2096,7 @@ const useContentSettings = () => {
     pageData,
     imageCount,
     formik,
+    personOptions,
     tagOptions,
     categoryOptions,
     handleFocusAutocomplete,
@@ -2148,6 +2170,7 @@ const useContentSettings = () => {
     modelOptions,
     planOptions,
     tagInputValue,
+    personInputValue,
     optionalTagInputValue,
     planInputValue,
     trailerInputValue,
@@ -2204,7 +2227,11 @@ const useContentSettings = () => {
     showScheduleButton,
     setShowScheduleButton,
     createScheduleButton,
-    setCreateScheduleButton
+    setCreateScheduleButton,
+    // selectRatingOtions,
+    selectedRating,
+    setSelectedRating,
+    ratingOptions
   }
 }
 

@@ -31,6 +31,7 @@ import GameStates from '../../../src/components/Content/GameStates'
 import ScheduleSection from '../../../src/components/Content/ScheduleSection'
 import EventInfo from '../../../src/components/Content/EventInfo'
 import SelectRatingComponent from '../../../src/components/selectRatingOption/selectRating'
+import SeasonSeries from '../../../src/components/Content/SeasonSeries'
 
 const ContentType = () => {
   const {
@@ -98,8 +99,11 @@ const ContentType = () => {
     setVideoplaylist,
     handleVideoplaylistDeletion,
     additionalMetadata,
+    seasonGroup,
     setAdditionalMetadata,
+    setSeasonGroup,
     handleAdditionalMetadata,
+    handleSeasonGroup,
     airDateTime,
     setAirDateTime,
     airTimezone,
@@ -176,6 +180,8 @@ const ContentType = () => {
     setCreateScheduleButton,
     selectedRating,
     setSelectedRating,
+    handleEpisodeDrop,
+    handleEpisodeDeletion
 
   } = useContentSettings()
 
@@ -668,6 +674,18 @@ const ContentType = () => {
               thirdPartyLive={thirdPartyLive}
             />
           )}
+          {apiType == 'series' && (
+            <SeasonSeries
+
+            seasonGroup={seasonGroup}
+            setSeasonGroup={setSeasonGroup}
+            handleSeasonGroup={handleSeasonGroup}
+                handleAutosave={handleAutosave}
+                handleEpisodeDrop={handleEpisodeDrop}
+                handleEpisodeDeletion={handleEpisodeDeletion}
+            />
+          )}
+          
           {(apiType == 'video' ||
             apiType == 'live' ||
             apiType == 'series' ||

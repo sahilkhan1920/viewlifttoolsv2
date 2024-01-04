@@ -1,5 +1,5 @@
 export const ratingOptions = [
-    { value: null, label: 'No Rating' },
+    { value: '', label: 'No Rating' },
     { value: 'FIVE_PLUS', label: '5+' },
     { value: 'THIRTEEN_PLUS', label: '13+' },
     { value: 'FIFTEEN_PLUS', label: '15+' },

@@ -1,3 +1,4 @@
+
 import { useEffect, useState } from 'react'
 import fetchHelper from 'src/helpers/fetchHelper'
 import { useCookies } from 'react-cookie'
@@ -8,6 +9,7 @@ import 'moment-timezone'
 import { useRouter } from 'next/router'
 import dayjs from 'dayjs'
 import { ratingOptions } from '../../constants/ratingOption'
+import produce from 'immer';
 
 const useContentSettings = () => {
   const [cookies] = useCookies()
@@ -64,6 +66,14 @@ const useContentSettings = () => {
     {
       name: null,
       value: null,
+    },
+  ])
+  const [seasonGroup, setSeasonGroup] = useState([
+    {
+      name: null,
+      purchase: null,
+      description: null,
+      episodes: []
     },
   ])
   const [embedCode, setEmbedCode] = useState('')
@@ -503,6 +513,10 @@ const useContentSettings = () => {
       setAdditionalMetadata(result.metadata || result.additionalMetadata)
     }
 
+    // for season group
+    if (result?.seasons?.length > 0 || result?.seasons?.length > 0) {
+      setSeasonGroup(result?.seasons || result.seasons)
+    }
     // for embed code
     let domainName = null
     if (cookies.DomainName) {
@@ -511,7 +525,7 @@ const useContentSettings = () => {
     }
 
     // for parental rating
-    setSelectedRating(result.parentalRating)
+    result.parentalRating ? setSelectedRating(result.parentalRating) : setSelectedRating('')
 
     // for live streaming
     if (result.isLiveStream) {
@@ -1701,6 +1715,21 @@ const useContentSettings = () => {
     setAdditionalMetadata(prev => [...prev, { name: null, value: null }])
     handleAutosave(null, 'additionalMetadata', updatedAdditionalMetadata)
   }
+ 
+  const handleSeasonGroup = () => {
+    const obj = {
+      name: null,
+      purchase: null,
+      description: null,
+      episodes:[]
+    }
+    setSeasonGroup(prev => [...prev, obj]);
+  };
+
+  useEffect(() => {
+    console.log("Updated seasonGroup:", seasonGroup);
+  }, [seasonGroup]);
+  
 
   const handleAutosave = (e, key, value) => {
     var fieldName = e?.target?.attributes && e.target.getAttribute('name')
@@ -1836,7 +1865,15 @@ const useContentSettings = () => {
       } else {
         saveData(contentId, apiType, 'metadata', value)
       }
-    } else if (fieldName == 'isDvrEnabled') {
+    }
+    else if (key == 'seasonGroup') {
+      if (apiType == 'series' ) {
+        saveData(contentId, apiType, 'seasonGroup', value)
+      } else {
+        saveData(contentId, apiType, 'seasons', value)
+      }
+    } 
+     else if (fieldName == 'isDvrEnabled') {
       fieldValue = e.currentTarget.checked
       setIsDVR(fieldValue)
       saveData(contentId, apiType, fieldName, fieldValue)
@@ -2089,6 +2126,41 @@ const useContentSettings = () => {
     })
   }
 
+  const handleEpisodeDrop = (index, newEpisode) => {
+    // Shallow Copy:
+    // const updatedSeasonGroup = [...prev];: The spread operator (...) is used to create a shallow copy of the previous state array (prev). This ensures that the original array is not mutated directly.
+
+    // Update Specific Index:
+    // updatedSeasonGroup[index] = {...updatedSeasonGroup[index], ...};: The code creates a new object for the specified index (index) within the updatedSeasonGroup array. The spread operator is used to copy the properties of the previous state object at that index.
+
+    // Deep Copy of Episodes Array:
+    // episodes: [...updatedSeasonGroup[index].episodes, newEpisode]: The episodes array for the specified index is updated by creating a new array. The spread operator is used to copy the existing episodes, and newEpisode is added to the end of the array.
+
+    // Return Updated State:
+    // return updatedSeasonGroup;: The entire updatedSeasonGroup array, with the updated object at the specified index, is returned. This becomes the new state that is set using setSeasonGroup
+
+    setSeasonGroup(prev => {
+      const updatedSeasonGroup = [...prev];
+      updatedSeasonGroup[index] = {
+        ...updatedSeasonGroup[index],
+        episodes: [...updatedSeasonGroup[index].episodes, newEpisode]
+      };
+      return updatedSeasonGroup;
+    });
+  };
+  console.log(additionalMetadata, "sahil check")
+  
+  const handleEpisodeDeletion = (seasonIndex, episodeIndex) => {
+    // Create a shallow copy of the state array
+    const updatedSeasonGroup = [...seasonGroup];
+
+    // Remove the episode at the specified index
+    updatedSeasonGroup[seasonIndex]?.episodes.splice(episodeIndex, 1);
+
+    // Update the state with the new array
+    setSeasonGroup(updatedSeasonGroup);
+  };
+
   return {
     loading,
     apiType,
@@ -2153,8 +2225,11 @@ const useContentSettings = () => {
     setVideoplaylist,
     handleVideoplaylistDeletion,
     additionalMetadata,
+    seasonGroup,
+    setSeasonGroup,
     setAdditionalMetadata,
     handleAdditionalMetadata,
+    handleSeasonGroup,
     airDateTime,
     setAirDateTime,
     airTimezone,
@@ -2231,7 +2306,9 @@ const useContentSettings = () => {
     // selectRatingOtions,
     selectedRating,
     setSelectedRating,
-    ratingOptions
+    ratingOptions,
+    handleEpisodeDrop,
+    handleEpisodeDeletion
   }
 }
 

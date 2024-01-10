@@ -10,9 +10,14 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import DropEpisode from '../DropEpisode';
 
-
-
-export default function SeasonGroup({ seasonGroup, setSeasonGroup, handleAutosave ,handleEpisodeDrop,handleEpisodeDeletion,handleSeasonGroup}) {
+export default function SeasonGroup({
+  seasonGroup,
+  setSeasonGroup,
+  handleAutosave,
+  handleEpisodeDrop,
+  handleEpisodeDeletion,
+  handleSeasonGroup,
+}) {
   const updateFieldValue = (index, field, value) => {
     const updatedFieldValues = [...seasonGroup];
     updatedFieldValues[index][field] = value;
@@ -25,6 +30,7 @@ export default function SeasonGroup({ seasonGroup, setSeasonGroup, handleAutosav
     handleAutosave(null, 'seasonGroup', updatedFieldValues);
   };
 
+  // console.log(seasonGroup,"reset")
 
   return (
     <div style={{ paddingTop: '40px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', alignItems: 'center' }}>
@@ -47,15 +53,32 @@ export default function SeasonGroup({ seasonGroup, setSeasonGroup, handleAutosav
       >
         + New Season
       </Button>
-
-      {seasonGroup.map((item, index) => (
-        <Accordion key={index} sx={{ marginBottom: '20px', background: 'inherit' }}>
-          <AccordionSummary expandIcon={<ExpandMoreIcon />} sx={{ width: '100%', justifyContent: 'center', background: 'inherit' }}>
-            <Typography variant="h6" sx={{ color: 'inherit' }}>
-              Season {index + 1}
-            </Typography>
-          </AccordionSummary>
-          <AccordionDetails>
+      {seasonGroup.length > 0 ? (
+  <>
+    {seasonGroup.length > 1 ? (
+      <>
+          {seasonGroup.slice(1).map((item, index) => (
+            <Accordion key={index} sx={{ marginBottom: '20px', background: 'inherit' }}>
+              <AccordionSummary expandIcon={<ExpandMoreIcon />} sx={{ width: '100%', justifyContent: 'center', background: 'inherit' }}>
+                <Typography variant="h6" sx={{ color: 'inherit', display: 'flex', alignItems: 'center' }}>
+                 <div style={{width:'400px'}}>Season {index + 1}</div> 
+                  <div
+                      className="delete-seasonBlock"
+                      onClick={() => handleDeleteField(index)}
+                      style={{
+                        display:'flex',
+                        cursor: 'pointer',
+                        marginLeft: 'auto',
+                        marginRight: '10px',
+                        alignItems:'center' ,
+                        justifyContent:'end',
+                       
+                      }}
+                    >
+                      <DeleteIcon />
+                    </div> </Typography>
+              </AccordionSummary>
+              <AccordionDetails>
             <Box
               sx={{
                 display: 'flex',
@@ -107,7 +130,9 @@ export default function SeasonGroup({ seasonGroup, setSeasonGroup, handleAutosav
                 id={`seasonDescription-${index}`}
                 label="Description"
                 value={item.description || ''}
-                onChange={(e) => updateFieldValue(index, 'description', e.target.value)}
+                onChange={(e) => {updateFieldValue(index, 'description', e.target.value)
+                }}
+               
                 onBlur={() => handleAutosave(null, 'seasonGroup', seasonGroup)}
                 variant="outlined"
                 sx={{
@@ -121,22 +146,17 @@ export default function SeasonGroup({ seasonGroup, setSeasonGroup, handleAutosav
               index={index}
               handleEpisodeDeletion={handleEpisodeDeletion}
               />
-
-              {index !== 0 && (
-                <div
-                  className="delete-seasonBlock"
-                  onClick={() => handleDeleteField(index)}
-                  style={{
-                    cursor: 'pointer',
-                  }}
-                >
-                  <DeleteIcon />
-                </div>
-              )}
             </Box>
           </AccordionDetails>
         </Accordion>
       ))}
+     </>
+    ) : (
+      <h2>No seasons has been added...</h2>
+    )}
+  </>
+) : null}
+      
     </div>
   );
 }

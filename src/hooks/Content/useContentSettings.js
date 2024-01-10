@@ -1717,18 +1717,21 @@ const useContentSettings = () => {
   }
  
   const handleSeasonGroup = () => {
-    const obj = {
-      name: null,
+    const updateSeasonsGroup = [...seasonGroup, {  name: null,
       purchase: null,
       description: null,
-      episodes:[]
-    }
-    setSeasonGroup(prev => [...prev, obj]);
+      episodes:[]}]
+   
+    setSeasonGroup(prev => [...prev, {  name: null,
+      purchase: null,
+      description: null,
+      episodes:[]}]);
+    handleAutosave(null, 'seasons', updateSeasonsGroup)
   };
 
-  useEffect(() => {
-    console.log("Updated seasonGroup:", seasonGroup);
-  }, [seasonGroup]);
+  // useEffect(() => {
+  //   console.log("Updated seasonGroup:", seasonGroup);
+  // }, [seasonGroup]);
   
 
   const handleAutosave = (e, key, value) => {
@@ -2148,7 +2151,7 @@ const useContentSettings = () => {
       return updatedSeasonGroup;
     });
   };
-  console.log(additionalMetadata, "sahil check")
+ 
   
   const handleEpisodeDeletion = (seasonIndex, episodeIndex) => {
     // Create a shallow copy of the state array

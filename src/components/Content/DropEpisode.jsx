@@ -15,7 +15,7 @@ const DropEpisode = ({ episodes, index, handleEpisodeDrop, handleEpisodeDeletion
     },
   }));
 
-  console.log(episodes, "sahil check 2");
+  // console.log(episodes, "sahil check 2");
 
   return (
     <div
@@ -28,38 +28,40 @@ const DropEpisode = ({ episodes, index, handleEpisodeDrop, handleEpisodeDeletion
           alignItems: 'center',
           position: 'relative',
           minHeight: '50px',
-          width: 400,
+          width: 470,
           overflowY: 'auto',
           border: '1px',
         }}
       >
         {episodes.length > 0 ? (
   episodes.map((episode, episodeIndex) => (
-    <div key={episode.id} style={{ position: 'relative', marginBottom: '10px', border: '1px ' }}>
-      <p>Episode {episodeIndex + 1}</p>
-      <p>{episode.title}</p>
-      <div
-        style={{
-          position: 'absolute',
-          bottom: '5px',
-          right: '5px',
-          zIndex: 999,
-          width: '30px',
-          height: '30px',
-          padding: '3px',
-          backgroundColor: 'white',
-          textAlign: 'center',
-          borderRadius: '5px',
-          cursor: 'pointer',
-        }}
-        onClick={() => handleEpisodeDeletion(index, episodeIndex)}
-      >
-        <DeleteIcon />
-      </div>
+    <div
+    key={episode.id}
+    style={{
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'space-between',
+      marginBottom: '10px',
+      border: '1px solid #ccc',
+      padding: '10px',
+      width: '100%',
+      height:'40px'
+    }}
+  >
+    <div style={{ display: 'flex', alignItems: 'center', justifyContent:'space-between', width:'320px' }}>
+      <p style={{ marginRight: '10px' }}>Ep{episodeIndex + 1}</p>
+      <p style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+        {episode.title.length > 30 ? `${episode.title.slice(0, 30)}...` : episode.title}
+      </p>
     </div>
+    <div style={{ cursor: 'pointer' }} onClick={() => handleEpisodeDeletion(index, episodeIndex)}>
+      <DeleteIcon />
+    </div>
+  </div>
+  
   ))
 ) : (
-  <p>No episodes have been added</p>
+  <h4>No episodes have been added</h4>
 )}
 
         
